@@ -1,9 +1,17 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>King Vape Catalogue</title>
-<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="King Vape: premium e-liquids, devices and puffs. Pick your products and send the order on WhatsApp.">
+<meta name="theme-color" content="#11141a">
+<link rel="icon" type="image/png" sizes="64x64" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=DM+Sans:wght@400;500;700&family=Marcellus&display=swap">
+<style>:root{color-scheme:dark}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#11141a;color:#f3efe6}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
 <style id="css">/* King Vape catalogue. One dark world taken from the logo: charcoal navy, champagne gold, WhatsApp green for send.
    Layout: brand bar, then a sticky search and category strip, a product grid washed in each photo's own color,
    and sheets for a product and the order. All spacing uses logical properties so Arabic (RTL) mirrors for free. */
@@ -109,6 +117,7 @@ html[dir=rtl] h1{font-weight:800;letter-spacing:0}
 .toast{position:fixed;left:50%;translate:-50% 0;bottom:calc(86px + env(safe-area-inset-bottom,0px));z-index:60;max-width:calc(100vw - 32px);padding:11px 18px;border-radius:18px;background:var(--text);color:var(--ink);font:600 14px var(--font-body);box-shadow:0 10px 28px rgba(0,0,0,.45);text-align:center}
 .toast.bad{background:#ffd9d9;color:#4a0f0f}
 
+
 /* ---------- dialogs */
 dialog{padding:0;border:0;color:var(--text);background:var(--panel);max-width:none;max-height:none;overflow:hidden}
 dialog::backdrop{background:rgba(7,9,13,.78)}
@@ -187,9 +196,9 @@ h3 span{color:var(--muted);font:400 13px var(--font-body)}
 form{display:grid;gap:12px;margin-top:20px}
 form label{display:grid;gap:6px;font-size:13px;color:var(--muted)}
 form label b{color:var(--text);font-weight:600;font-size:14px}
-input[type=text],input[type=number],textarea,select{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--panel-2);font-size:15px}
+input[type=text],input[type=number],input[type=password],textarea,select{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--panel-2);font-size:15px}
 textarea{min-height:72px;resize:vertical}
-input[type=text]:focus,input[type=number]:focus,textarea:focus,select:focus{border-color:var(--gold);outline:none}
+input[type=text]:focus,input[type=number]:focus,input[type=password]:focus,textarea:focus,select:focus{border-color:var(--gold);outline:none}
 .err{margin:0;color:var(--danger);font-size:13px}
 details.preview{margin-top:16px;border:1px solid var(--line);border-radius:12px;padding:0 14px}
 details.preview summary{height:44px;display:flex;align-items:center;cursor:pointer;color:var(--muted);font-size:14px}
@@ -230,6 +239,7 @@ dialog.gate::backdrop{background:rgba(7,9,13,.84);backdrop-filter:blur(12px)}
 .wahelp .wnum{font:700 17px var(--font-body);letter-spacing:.01em;user-select:all}
 .wahelp a.btn{color:var(--text)}
 .c-foot.help .fine{display:none}
+
 
 /* ---------- admin panel (only built for people who can edit the artifact) */
 .sheet.adminp{inset:0;margin:0;width:100%;height:100vh;height:100dvh;max-height:none;border-radius:0}
@@ -304,7 +314,53 @@ html[dir=rtl] .a-opt .sw[aria-checked="true"] i::after{transform:translateX(-16p
 .a-opt .mid{display:grid;gap:3px;min-width:0}
 .a-opt .st{padding-inline:4px;font-size:12px;font-weight:600;color:var(--ok)}
 .a-opt.gone .st{color:var(--danger)}
+
+/* ---------- web admin: staff link, sign-in, admins and account */
+.site-foot .staff{margin-top:14px;border:0;background:none;color:var(--muted);font:500 12.5px var(--font-body);text-decoration:underline;text-underline-offset:3px;padding:8px 12px;opacity:.7}
+.site-foot .staff:hover,.site-foot .staff:focus-visible{opacity:1}
+
+.a-nav{justify-content:flex-start}
+.cta.solo{justify-content:center}
+.msg{margin:0;padding:10px 12px;border-radius:12px;border:1px solid var(--line);font-size:14px;line-height:1.45;overflow-wrap:anywhere}
+.msg.bad{border-color:color-mix(in srgb,var(--danger) 55%,var(--line));color:var(--danger)}
+.msg.ok{border-color:color-mix(in srgb,var(--ok) 55%,var(--line));color:var(--ok)}
+
+.authp form label small,.peoplep form label small{color:var(--muted);font-size:12.5px;font-weight:400}
+.pw{display:flex;gap:8px;align-items:stretch}
+.pw input{flex:1 1 auto;min-width:0}
+.pw .show,.pw .gen{flex:none;min-width:64px;border:1px solid var(--line);background:var(--panel-2);border-radius:12px;padding:0 12px;font:600 13px var(--font-body);color:var(--muted)}
+.pw .gen{color:var(--gold)}
+.authp .c-scroll form{margin-top:16px}
+.authp form .cta{margin-top:4px}
+
+@media (min-width:860px){
+  .sheet.authp{inset:0;margin:auto;width:min(460px,calc(100vw - 48px));height:auto;max-height:min(760px,calc(100dvh - 48px));border-radius:22px}
+  .sheet.peoplep{inset:0;margin:auto;width:min(640px,calc(100vw - 48px));height:min(780px,calc(100dvh - 48px));border-radius:22px}
+}
+
+.peoplep .c-scroll{display:grid;gap:14px;align-content:start}
+.p-card{border:1px solid var(--line);border-radius:16px;background:color-mix(in srgb,var(--panel-2) 55%,transparent);padding:14px}
+.p-card .s-sub{margin:0 0 4px;font-size:13.5px}
+.p-card form{margin-top:12px}
+.p-h{display:block;margin:0 0 6px;font:700 15px var(--font-body)}
+.p-me{display:grid;gap:2px;margin:6px 0 8px}
+.p-me span{color:var(--muted);font-size:13.5px}
+.p-pw summary{cursor:pointer;color:var(--gold);font-weight:600;font-size:14px;padding:8px 0}
+.p-list{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:8px}
+.p-row{display:grid;gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+.p-row .pr-top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.p-row .who{display:grid;gap:2px;min-width:0}
+.p-row .who b{overflow-wrap:anywhere}
+.p-row .who span{color:var(--muted);font-size:13px}
+.p-row .acts{display:flex;gap:6px;flex-wrap:wrap}
+.p-row form{margin-top:0}
+.role{display:inline-block;padding:2px 8px;border-radius:999px;background:var(--panel-2);color:var(--gold);font:600 11.5px var(--font-body);margin-inline-start:6px;vertical-align:middle}
+.p-cred{display:grid;gap:10px;padding:12px;border:1px solid var(--gold);border-radius:12px;background:color-mix(in srgb,var(--gold) 9%,var(--panel))}
+.p-cred p{margin:0;font-size:14px}
+.p-cred pre{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font:500 13.5px/1.55 ui-monospace,Menlo,Consolas,monospace;user-select:all;direction:ltr;text-align:left}
 </style>
+</head>
+<body>
 <script type="text/html" id="tpl"><header class="brandbar">
   <div class="wrap brandrow">
     <div class="brand">
@@ -353,6 +409,7 @@ html[dir=rtl] .a-opt .sw[aria-checked="true"] i::after{transform:translateX(-16p
     </a>
     <p data-i="footPrices"></p>
     <p data-i="footAge"></p>
+    <button class="staff" id="staff" type="button" data-i="staff"></button>
   </div>
 </footer>
 
@@ -434,11 +491,15 @@ html[dir=rtl] .a-opt .sw[aria-checked="true"] i::after{transform:translateX(-16p
 
 <dialog class="sheet adminp" id="admin" aria-labelledby="a-title">
   <div class="a-head">
-    <div><h2 id="a-title" data-i="aTitle"></h2><small data-i="aSub"></small></div>
+    <div><h2 id="a-title" data-i="aTitle"></h2><small id="a-sub"></small></div>
     <button class="x" id="a-close" type="button" data-i-aria="close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
   </div>
   <div class="a-bar">
     <div class="a-banner" id="a-banner" hidden></div>
+    <div class="row a-nav">
+      <button class="btn sm" id="a-people" type="button"></button>
+      <button class="btn sm" id="a-out" type="button"></button>
+    </div>
     <div class="row">
       <input type="search" id="a-q" data-i-ph="aSearch" data-i-aria="aSearch" autocomplete="off">
       <button class="btn" id="a-soldf" type="button" aria-pressed="false" data-i="aSoldOnly"></button>
@@ -454,8 +515,36 @@ html[dir=rtl] .a-opt .sw[aria-checked="true"] i::after{transform:translateX(-16p
     </div>
   </div>
 </dialog>
+
+<dialog class="sheet authp" id="auth" aria-labelledby="au-title">
+  <div class="c-head">
+    <h2 id="au-title"></h2>
+    <button class="x" id="au-close" type="button" data-i-aria="close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div class="c-scroll">
+    <p class="s-sub" id="au-sub"></p>
+    <form id="au-form" novalidate>
+      <label class="f-setup" for="au-code" hidden><b data-i="suCode"></b><input id="au-code" type="text" autocomplete="off" autocapitalize="characters" autocorrect="off" spellcheck="false"><small data-i="suCodeHelp"></small></label>
+      <label class="f-setup" for="au-name" hidden><b data-i="suName"></b><input id="au-name" type="text" autocomplete="name"></label>
+      <label for="au-user"><b id="au-user-l"></b><input id="au-user" type="text" autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false"></label>
+      <label for="au-pass"><b id="au-pass-l"></b><span class="pw"><input id="au-pass" type="password" autocomplete="current-password"><button class="show" type="button" data-show="au-pass"></button></span></label>
+      <label class="f-setup" for="au-pass2" hidden><b data-i="suPass2"></b><span class="pw"><input id="au-pass2" type="password" autocomplete="new-password"></span><small data-i="passHint"></small></label>
+      <p class="msg bad" id="au-msg" role="alert" hidden></p>
+      <button class="cta solo" id="au-go" type="submit"><span></span></button>
+      <p class="fine" id="au-forgot"></p>
+    </form>
+  </div>
+</dialog>
+
+<dialog class="sheet peoplep" id="people" aria-labelledby="pe-title">
+  <div class="c-head">
+    <h2 id="pe-title"></h2>
+    <button class="x" id="pe-close" type="button" data-i-aria="close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div class="c-scroll" id="pe-body"></div>
+</dialog>
 </script>
-<script type="application/json" id="data">{"v":2,"rev":1,"n":"","shop":{"phone":"96171243971","cur":"$"},"products":[{"id":"freemax-rexa-pro","name":"Freemax Rexa Pro","cat":"devices","sub":null,"img":"images/freemax-rexa-pro.webp","glow":[196,107,118],"price":35,"specs":["Full kit","30 W","Pod system","Smart bluetooth"],"kind":"flavor","options":[]},{"id":"freemax-rexa-smart","name":"Freemax Rexa Smart","cat":"devices","sub":null,"img":"images/freemax-rexa-smart.webp","glow":[76,111,174],"price":35,"specs":["Full kit","30 W","Smart bluetooth","Pod system"],"kind":"flavor","options":[]},{"id":"smok-nord-gt","name":"Smok Nord GT","cat":"devices","sub":null,"img":"images/smok-nord-gt.webp","glow":[131,103,65],"price":35,"specs":["80 W","Full kit"],"kind":"flavor","options":[]},{"id":"smok-novo-gt-kit","name":"Smok Novo GT Kit","cat":"devices","sub":null,"img":"images/smok-novo-gt-kit.webp","glow":[43,98,90],"price":35,"specs":["Kit","30 W"],"kind":"color","options":["Black","Silver"]},{"id":"smok-supa-80w","name":"Smok Supa 80W","cat":"devices","sub":null,"img":"images/smok-supa-80w.webp","glow":[75,97,121],"price":35,"specs":["Full kit","80 W"],"kind":"flavor","options":[]},{"id":"uwell-caliburn-g3-pro","name":"Uwell Caliburn G3 Pro","cat":"devices","sub":null,"img":"images/uwell-caliburn-g3-pro.webp","glow":[30,139,167],"price":35,"specs":["Full kit","35 W","Pod system"],"kind":"flavor","options":[]},{"id":"dr-vape-panther-120-ml","name":"Dr Vape Panther 120 ml","cat":"juices","sub":"Freebase","img":"images/dr-vape-panther-120-ml.webp","glow":[175,71,87],"price":null,"specs":["120 ml","Freebase"],"kind":"flavor","options":["Blackcurrant Soft Drink","Sour Candy Blackcurrant","Blackcurrant Cold Drink","Lychee & Exotic Fruits","Blackcurrant Smoothie"]},{"id":"nasty-juice-60-ml","name":"Nasty Juice 60 ml","cat":"juices","sub":"Freebase","img":"images/nasty-juice-60-ml.webp","glow":[203,100,124],"price":null,"specs":["60 ml","3 mg nicotine","Freebase"],"kind":"flavor","options":["Red Rage (Redbull)","Peach Lemonade","Mango Ice","Blackcurrant Bad Blood","Mango Grape","Green Apple","Mango Strawberry","Asap Grape","Grape Raspberry Shisha","Grape & Mixed Berries"]},{"id":"penta-vapes-60-ml","name":"Penta Vapes 60 ml","cat":"juices","sub":"Freebase","img":"images/penta-vapes-60-ml.webp","glow":[151,178,59],"price":null,"specs":["60 ml","3 mg nicotine","Freebase"],"kind":"flavor","options":["Double Apple","Watermelon Ice","Grape Ice"]},{"id":"tokyo-classic-60-ml","name":"Tokyo Classic 60 ml","cat":"juices","sub":"Freebase","img":"images/tokyo-classic-60-ml.webp","glow":[134,170,220],"price":null,"specs":["60 ml","3 mg nicotine","Freebase"],"kind":"flavor","options":["Blueberry Ice","Strawberry Watermelon Ice","Watermelon Ice","Cappuccino","Strawberry Mango Ice","Fruit Bomb Ice","Blueberry Watermelon Ice","Passion Fruit Ice","Peanut Cake Ice","Mango Passion Fruit Ice","Peach Ice","Strawberry Ice","Mango Peach Ice","Lemon Lime Ice","Strawberry Lychee Ice","Cranberry Raspberry Ice","Pina Colada Ice","Lemon Strawberry Ice","Apple Ice","Grape Ice"]},{"id":"atvs-salt-10-ml","name":"ATVS Salt 10 ml","cat":"juices","sub":"Salt nicotine","img":"images/atvs-salt-10-ml.webp","glow":[107,215,234],"price":null,"specs":["10 ml","20 mg nicotine","Salt nicotine"],"kind":"flavor","options":["Blueberry","Strawberry Watermelon","Mr Blue"]},{"id":"nasty-salt-30-ml","name":"Nasty Salt 30 ml","cat":"juices","sub":"Salt nicotine","img":"images/nasty-salt-30-ml.webp","glow":[233,188,14],"price":null,"specs":["30 ml","35 mg nicotine","Salt nicotine"],"kind":"flavor","options":["Mango Cushman","Grape Raspberry Shisha","Red Rage (Redbull)","Mango Banana","Mango Grape","Pineapple Lemonade","Blackcurrant Lemonade"]},{"id":"smok-salt-10-ml","name":"Smok Salt 10 ml","cat":"juices","sub":"Salt nicotine","img":"images/smok-salt-10-ml.webp","glow":[71,115,185],"price":null,"specs":["10 ml","20 mg nicotine","Salt nicotine"],"kind":"flavor","options":["Blueberry","Watermelon Strawberry Bubblegum","Blueberry Cherry Cranberry","Red Apple Ice","Watermelon Ice"]},{"id":"tokyo-salt-30-ml","name":"Tokyo Salt 30 ml","cat":"juices","sub":"Salt nicotine","img":"images/tokyo-salt-30-ml.webp","glow":[201,75,63],"price":null,"specs":["30 ml","30 mg nicotine","Salt nicotine"],"kind":"flavor","options":["Mango Peach Ice","Peach Ice","Blueberry Watermelon Ice","Mango Strawberry Ice","Watermelon Ice","Strawberry Ice","Blueberry Ice","Passion Fruit Ice","Grape Ice","Mango Ice"]},{"id":"vgod-salt-30-ml","name":"VGod Salt 30 ml","cat":"juices","sub":"Salt nicotine","img":"images/vgod-salt-30-ml.webp","glow":[75,89,133],"price":null,"specs":["30 ml","25 mg nicotine","Salt nicotine"],"kind":"flavor","options":["Bluerazz Iced","Sour Strawberry Iced","Purple Grape Iced"]},{"id":"airfuze-smart-40000","name":"Airfuze Smart 40000","cat":"puffs","sub":"Normal puffs","img":"images/airfuze-smart-40000.webp","glow":[249,96,24],"price":null,"specs":["40,000 puffs"],"kind":"flavor","options":["Blueberry Ice","Blueberry Watermelon","Strawberry Summer","Watermelon Ice","Grape Ice","Miami Mint","Bluerazz Ice","Juicy Peach"]},{"id":"airmez-20000","name":"Airmez 20000","cat":"puffs","sub":"Normal puffs","img":"images/airmez-20000.webp","glow":[193,122,93],"price":null,"specs":["20,000 puffs","2 mg"],"kind":"flavor","options":["Mango Peach","Grape Ice","Dr Blue","Blueberry Ice","Strawberry Ice","Mixed Berries","Strawberry Watermelon"]},{"id":"airmez-fox-120000","name":"Airmez Fox 120000","cat":"puffs","sub":"Normal puffs","img":"images/airmez-fox-120000.webp","glow":[235,36,35],"price":null,"specs":["120,000 puffs","4 flavors in one"],"kind":"combo","options":["Love 66 / Cherry / Blueberry Ice / Kiwi Passion Fruit","Watermelon Ice / Strawberry Watermelon / Raspberry Watermelon / Blueberry Raspberry","Grape Ice / Love 66 / Blueberry Ice / Dragon Fruit Ice","Strawberry Raspberry / Strawberry Kiwi / Strawberry Ice / Peach Mango Watermelon","Red Mojito / Love 66 / Mixed Berries / Strawberry Watermelon","Peach Ice / Pink Lemonade / Watermelon Ice / Dr Blue","Cherry Ice / Love 66 / Berry Lemonade / Grape Ice","Mango Peach / Tropical Fruit / Peach Ice / Sour Mango Pineapple","Peach Mango Watermelon / Blueberry Cherry / Watermelon Dragonfruit / Passion","Pink Lemonade / Passion Fruit / Mixed Berries / Triple Berry"]},{"id":"airmez-fox-80k","name":"Airmez Fox 80K","cat":"puffs","sub":"Normal puffs","img":"images/airmez-fox-80k.webp","glow":[164,97,176],"price":null,"specs":["80,000 puffs","2 flavors in one"],"kind":"combo","options":["Tropical Fruit / Love 66","Mixed Berries / Dr Blue","Blueberry Ice / Blueberry Raspberry","Strawberry Watermelon / Strawberry Raspberry","Peach Ice / Mango Peach","Bluerazz Lemonade / Bluerazz","Raspberry Watermelon / Watermelon Ice"]},{"id":"airmez-pen-cigarette","name":"Airmez Pen Cigarette","cat":"puffs","sub":"Normal puffs","img":"images/airmez-pen-cigarette.webp","glow":[5,89,117],"price":null,"specs":["Pen cigarette style"],"kind":"flavor","options":["Polar Mint","Double Strawberry","Tobacco","Black Grape","Bluerazz Ice"]},{"id":"atvs-40000","name":"ATVS 40000","cat":"puffs","sub":"Normal puffs","img":"images/atvs-40000.webp","glow":[157,88,219],"price":null,"specs":["40,000 puffs"],"kind":"flavor","options":["Triple Mango","Apple Ice"]},{"id":"bang-king-32k-switch","name":"Bang King 32K Switch","cat":"puffs","sub":"Normal puffs","img":"images/bang-king-32k-switch.webp","glow":[128,29,151],"price":null,"specs":["32,000 puffs","2 flavors in one"],"kind":"combo","options":["Watermelon Ice / Blueberry Mint","Blueberry Watermelon / Strawberry Mango"]},{"id":"bang-king-40000","name":"Bang King 40000","cat":"puffs","sub":"Normal puffs","img":"images/bang-king-40000.webp","glow":[179,62,79],"price":null,"specs":["40,000 puffs"],"kind":"flavor","options":["Watermelon","Strawberry Watermelon","Blueberry Ice","Mango Peach Watermelon","Strawberry Ice","Kiwi Passion Fruit","Watermelon Bubble Gum","Blueberry Grape","Peach Ice","Blueberry Raspberry","Strawberry Kiwi"]},{"id":"bang-king-85000","name":"Bang King 85000","cat":"puffs","sub":"Normal puffs","img":"images/bang-king-85000.webp","glow":[247,150,56],"price":null,"specs":["85,000 puffs","3 flavors in one"],"kind":"combo","options":["Blueberry Ice / Lemon Lime / Strawberry Watermelon","Watermelon Ice / Redbull / Strawberry Kiwi","Bluerazz Ice / Strawberry Watermelon / Watermelon Ice","Ice Tea Lemon Ice / Lyche Ice / Mango Ice","Strawberry Donut / Love 66 / Banana Ice","Strawberry Banana / Pink Lemonade / Raspberry Watermelon","Kiwi Passion Fruit Guava / Lush Ice / Strawberry Mango","Double Apple / Pineapple Ice / Fruit Fusion","Strawberry Vanilla Cake / Black Dragon Ice / Peach Ice","Strawberry Watermelon / Triple Melon / Strawberry Ice","Tropical Fruit / Lemon Peach / Strawberry Watermelon","Peach Mango / Bluerazz Cherry / Mint Ice","Berry Lemonade / Strawberry Redbull / Strawberry Ice","Mixed Berries / Mango Peach / Grape Ice"]},{"id":"bang-leader-80k","name":"Bang Leader 80K","cat":"puffs","sub":"Normal puffs","img":"images/bang-leader-80k.webp","glow":[178,59,131],"price":null,"specs":["80,000 puffs","3 flavors in one"],"kind":"combo","options":["Strawberry Watermelon / Grape Ice / Rainbow Candy","Blueberry Ice / Black Dragon Ice / Mango Peach","Blueberry Watermelon / Strawberry Mango / Blackcurrant","Red Bull / Blueberry Watermelon / Apple","Watermelon Ice / Strawberry Mango / Banana","Blueberry Ice / Strawberry Banana / Mixed Berries","Avocado Ice / Lemon Lime / Watermelon Raspberry","Redbull / Watermelon Bubble Candy / Strawberry Ice Cream","Raspberry Mojito Peach / Strawberry Watermelon / Kiwi Passion Fruit Guava"]},{"id":"coolplay-5000","name":"Coolplay 5000","cat":"puffs","sub":"Normal puffs","img":"images/coolplay-5000.webp","glow":[69,81,141],"price":null,"specs":["5,000 puffs"],"kind":"flavor","options":["Blueberry Ice","Watermelon Ice","Mixed Berries","Peach Mango","Passion Fruit","Black Grape"]},{"id":"keystone-tweak-60k","name":"Keystone Tweak 60K","cat":"puffs","sub":"Normal puffs","img":"images/keystone-tweak-60k.webp","glow":[42,123,181],"price":null,"specs":["60,000 puffs"],"kind":"flavor","options":["White Gummy Bear","Berry Bliss (Mixed Berries)","Sour Rainbow","Mango Magic","Watermelon Berry","Bluerazz Ice","Blueberry Mint"],"note":"Has an ice controller and a sweet and nicotine controller.","noteAr":"مزوّد بمتحكم للبرودة ومتحكم للحلاوة والنيكوتين."},{"id":"my-bar-20000","name":"My Bar 20000","cat":"puffs","sub":"Normal puffs","img":"images/my-bar-20000.webp","glow":[196,111,44],"price":null,"specs":["20,000 puffs"],"kind":"flavor","options":["Double Apple","Double Cherry","Mango Ice","Grape Ice","Berry Peach","Strawberry Ice","Blueberry Ice","Mixed Berries","Strawberry Mango"]},{"id":"nasty-machine","name":"Nasty Machine","cat":"puffs","sub":"Normal puffs","img":"images/nasty-machine.webp","glow":[219,12,136],"price":null,"specs":["Device only"],"kind":"color","options":["Navy Blue","Black"],"note":"Device only. The cartridge is sold separately.","noteAr":"الجهاز فقط. الخرطوشة تُباع منفصلة."},{"id":"nasty-pods-5000","name":"Nasty Pods 5000","cat":"puffs","sub":"Normal puffs","img":"images/nasty-pods-5000.webp","glow":[249,35,13],"price":null,"specs":["5,000 puffs"],"kind":"flavor","options":["Cherry Peach Lemon","Watermelon Ice","Strawberry Watermelon","Strawberry Ice","White Peach Raspberry","Mango Blackcurrant","Blueberry Ice","Blackcurrant","Peach Ice"]},{"id":"nexa-pro-30000","name":"Nexa Pro 30000","cat":"puffs","sub":"Normal puffs","img":"images/nexa-pro-30000.webp","glow":[53,106,145],"price":null,"specs":["30,000 puffs"],"kind":"flavor","options":["Mexican Mango","Sour Apple Ice","Blueberry Ice","Peach Mango Watermelon","Watermelon Ice","Pink Lemonade","Strawberry Ice","Grape Ice","Strawberry Watermelon","Blueberry Watermelon","Bluerazz Ice","Tropical Twist"]},{"id":"oxbar-panther-50k","name":"Oxbar Panther 50K","cat":"puffs","sub":"Normal puffs","img":"images/oxbar-panther-50k.webp","glow":[172,59,86],"price":null,"specs":["50,000 puffs"],"kind":"flavor","options":["Peach Ice","Tropical","Peach Bluerazz","Frozen Remix","Purple Ice"]},{"id":"posh-pro-max-smart-30000","name":"Posh Pro Max Smart 30000","cat":"puffs","sub":"Normal puffs","img":"images/posh-pro-max-smart-30000.webp","glow":[169,59,71],"price":13,"specs":["30,000 puffs"],"kind":"flavor","options":["Watermelon Ice","Berry Breeze","Blueberry Ice","Grape Pomegranate Ice","Bluerazz Cotton Cloudz","Strawberry Summer Time"]},{"id":"vanther-30000","name":"Vanther 30000","cat":"puffs","sub":"Normal puffs","img":"images/vanther-30000.webp","glow":[132,151,51],"price":null,"specs":["30,000 puffs"],"kind":"flavor","options":["Mixed Berries","Strawberry Ice","Peach Ice","Mango Ice","Grape Ice","Watermelon Ice"]},{"id":"vanther-plus-16000","name":"Vanther Plus 16000","cat":"puffs","sub":"Normal puffs","img":"images/vanther-plus-16000.webp","glow":[165,87,217],"price":null,"specs":["16,000 puffs"],"kind":"flavor","options":["Watermelon","Blueberry","Strawberry","Watermelon Bubblegum","Peach Strawberry","Strawberry Raspberry","Mixed Berries","Grape Ice"]},{"id":"aaok-shisha-80000","name":"Aaok Shisha 80000","cat":"puffs","sub":"Shisha puffs","img":"images/aaok-shisha-80000.webp","glow":[222,88,71],"price":null,"specs":["80,000 puffs"],"kind":"flavor","options":["Watermelon","Love 66","Watermelon Bubblegum","Mango Ice","Mixed Berries","Blueberry Ice","Lady Killer","Fizzy Cherry Cola","Strawberry Watermelon","Grape Ice"]},{"id":"airbar-shisha-5000","name":"Airbar Shisha 5000","cat":"puffs","sub":"Shisha puffs","img":"images/airbar-shisha-5000.webp","glow":[240,196,69],"price":null,"specs":["5,000 puffs"],"kind":"flavor","options":["Double Apple","Grape Mint","Mango Ice","Strawberry","Mixed Berries"]},{"id":"atvs-shisha-120k","name":"ATVS Shisha 120K","cat":"puffs","sub":"Shisha puffs","img":"images/atvs-shisha-120k.webp","glow":[29,102,149],"price":null,"specs":["120,000 puffs"],"kind":"flavor","options":["Double Apple","Cherry Ice","Mango Ice","Blackcurrant Ice"]},{"id":"bang-blaze-shisha-40000","name":"Bang Blaze Shisha 40000","cat":"puffs","sub":"Shisha puffs","img":"images/bang-blaze-shisha-40000.webp","glow":[229,141,47],"price":null,"specs":["40,000 puffs"],"kind":"flavor","options":["Blueberry Ice","Watermelon","Strawberry Watermelon","Strawberry Ice","Redbull","Peach Ice","Blueberry Raspberry","Mixed Fruit","Mango Peach","Pina Colada"]},{"id":"bang-shisha-42000","name":"Bang Shisha 42000","cat":"puffs","sub":"Shisha puffs","img":"images/bang-shisha-42000.webp","glow":[224,194,85],"price":null,"specs":["42,000 puffs"],"kind":"flavor","options":["Mint","Strawberry Watermelon","Double Apple"]},{"id":"hookalit-shisha-40000","name":"Hookalit Shisha 40000","cat":"puffs","sub":"Shisha puffs","img":"images/hookalit-shisha-40000.webp","glow":[224,89,104],"price":null,"specs":["40,000 puffs"],"kind":"flavor","options":["Passion Fruit","Strawberry Kiwi","Brown Ale","Mixed Berries"]},{"id":"mazaya-20000","name":"Mazaya 20000","cat":"puffs","sub":"Shisha puffs","img":"images/mazaya-20000.webp","glow":[207,116,15],"price":null,"specs":["20,000 puffs"],"kind":"flavor","options":["Mango","Blueberry Ice","Mixed Berries","Lush Ice","Two Apple","Lemon Mint"]},{"id":"nasty-shisha-10000","name":"Nasty Shisha 10000","cat":"puffs","sub":"Shisha puffs","img":"images/nasty-shisha-10000.webp","glow":[46,88,127],"price":null,"specs":["10,000 puffs"],"kind":"flavor","options":["Watermelon Ice","Vimto Bull","Shisha Double Apple","Shisha Lemon Mint","Bad Blood","Grape Ice","Lemon Cherry","Apple Peach","Berry Grape","Blue Raspberry Lemonade","Artik Mint","Bluerazz Ice","Grape Raspberry Ice","Strawberry Guava Kiwi","Blue Sour Raspberry","Shisha Mixed Melon Mint"]},{"id":"peakbar-shisha-25000","name":"Peakbar Shisha 25000","cat":"puffs","sub":"Shisha puffs","img":"images/peakbar-shisha-25000.webp","glow":[214,150,81],"price":null,"specs":["25,000 puffs"],"kind":"flavor","options":["Watermelon Ice","Mango Ice","Two Apple","Black Currant Ice","Grape Ice","Magic Love","Blue Razz Lemonade","Love 66","Frozen Strawberry","Lady Killer","Blueberry Gum","Gum Flavor","Blow Pop","Lemon Mint"]}]}</script>
+<script type="application/json" id="data">{"v":2,"rev":1,"shop":{"phone":"96171243971","cur":"$"},"products":[{"id":"freemax-rexa-pro","name":"Freemax Rexa Pro","cat":"devices","sub":null,"img":"images/freemax-rexa-pro.webp","glow":[196,107,118],"price":35,"specs":["Full kit","30 W","Pod system","Smart bluetooth"],"kind":"flavor","options":[]},{"id":"freemax-rexa-smart","name":"Freemax Rexa Smart","cat":"devices","sub":null,"img":"images/freemax-rexa-smart.webp","glow":[76,111,174],"price":35,"specs":["Full kit","30 W","Smart bluetooth","Pod system"],"kind":"flavor","options":[]},{"id":"smok-nord-gt","name":"Smok Nord GT","cat":"devices","sub":null,"img":"images/smok-nord-gt.webp","glow":[131,103,65],"price":35,"specs":["80 W","Full kit"],"kind":"flavor","options":[]},{"id":"smok-novo-gt-kit","name":"Smok Novo GT Kit","cat":"devices","sub":null,"img":"images/smok-novo-gt-kit.webp","glow":[43,98,90],"price":35,"specs":["Kit","30 W"],"kind":"color","options":["Black","Silver"]},{"id":"smok-supa-80w","name":"Smok Supa 80W","cat":"devices","sub":null,"img":"images/smok-supa-80w.webp","glow":[75,97,121],"price":35,"specs":["Full kit","80 W"],"kind":"flavor","options":[]},{"id":"uwell-caliburn-g3-pro","name":"Uwell Caliburn G3 Pro","cat":"devices","sub":null,"img":"images/uwell-caliburn-g3-pro.webp","glow":[30,139,167],"price":35,"specs":["Full kit","35 W","Pod system"],"kind":"flavor","options":[]},{"id":"dr-vape-panther-120-ml","name":"Dr Vape Panther 120 ml","cat":"juices","sub":"Freebase","img":"images/dr-vape-panther-120-ml.webp","glow":[175,71,87],"price":null,"specs":["120 ml","Freebase"],"kind":"flavor","options":["Blackcurrant Soft Drink","Sour Candy Blackcurrant","Blackcurrant Cold Drink","Lychee & Exotic Fruits","Blackcurrant Smoothie"]},{"id":"nasty-juice-60-ml","name":"Nasty Juice 60 ml","cat":"juices","sub":"Freebase","img":"images/nasty-juice-60-ml.webp","glow":[203,100,124],"price":null,"specs":["60 ml","3 mg nicotine","Freebase"],"kind":"flavor","options":["Red Rage (Redbull)","Peach Lemonade","Mango Ice","Blackcurrant Bad Blood","Mango Grape","Green Apple","Mango Strawberry","Asap Grape","Grape Raspberry Shisha","Grape & Mixed Berries"]},{"id":"penta-vapes-60-ml","name":"Penta Vapes 60 ml","cat":"juices","sub":"Freebase","img":"images/penta-vapes-60-ml.webp","glow":[151,178,59],"price":null,"specs":["60 ml","3 mg nicotine","Freebase"],"kind":"flavor","options":["Double Apple","Watermelon Ice","Grape Ice"]},{"id":"tokyo-classic-60-ml","name":"Tokyo Classic 60 ml","cat":"juices","sub":"Freebase","img":"images/tokyo-classic-60-ml.webp","glow":[134,170,220],"price":null,"specs":["60 ml","3 mg nicotine","Freebase"],"kind":"flavor","options":["Blueberry Ice","Strawberry Watermelon Ice","Watermelon Ice","Cappuccino","Strawberry Mango Ice","Fruit Bomb Ice","Blueberry Watermelon Ice","Passion Fruit Ice","Peanut Cake Ice","Mango Passion Fruit Ice","Peach Ice","Strawberry Ice","Mango Peach Ice","Lemon Lime Ice","Strawberry Lychee Ice","Cranberry Raspberry Ice","Pina Colada Ice","Lemon Strawberry Ice","Apple Ice","Grape Ice"]},{"id":"atvs-salt-10-ml","name":"ATVS Salt 10 ml","cat":"juices","sub":"Salt nicotine","img":"images/atvs-salt-10-ml.webp","glow":[107,215,234],"price":null,"specs":["10 ml","20 mg nicotine","Salt nicotine"],"kind":"flavor","options":["Blueberry","Strawberry Watermelon","Mr Blue"]},{"id":"nasty-salt-30-ml","name":"Nasty Salt 30 ml","cat":"juices","sub":"Salt nicotine","img":"images/nasty-salt-30-ml.webp","glow":[233,188,14],"price":null,"specs":["30 ml","35 mg nicotine","Salt nicotine"],"kind":"flavor","options":["Mango Cushman","Grape Raspberry Shisha","Red Rage (Redbull)","Mango Banana","Mango Grape","Pineapple Lemonade","Blackcurrant Lemonade"]},{"id":"smok-salt-10-ml","name":"Smok Salt 10 ml","cat":"juices","sub":"Salt nicotine","img":"images/smok-salt-10-ml.webp","glow":[71,115,185],"price":null,"specs":["10 ml","20 mg nicotine","Salt nicotine"],"kind":"flavor","options":["Blueberry","Watermelon Strawberry Bubblegum","Blueberry Cherry Cranberry","Red Apple Ice","Watermelon Ice"]},{"id":"tokyo-salt-30-ml","name":"Tokyo Salt 30 ml","cat":"juices","sub":"Salt nicotine","img":"images/tokyo-salt-30-ml.webp","glow":[201,75,63],"price":null,"specs":["30 ml","30 mg nicotine","Salt nicotine"],"kind":"flavor","options":["Mango Peach Ice","Peach Ice","Blueberry Watermelon Ice","Mango Strawberry Ice","Watermelon Ice","Strawberry Ice","Blueberry Ice","Passion Fruit Ice","Grape Ice","Mango Ice"]},{"id":"vgod-salt-30-ml","name":"VGod Salt 30 ml","cat":"juices","sub":"Salt nicotine","img":"images/vgod-salt-30-ml.webp","glow":[75,89,133],"price":null,"specs":["30 ml","25 mg nicotine","Salt nicotine"],"kind":"flavor","options":["Bluerazz Iced","Sour Strawberry Iced","Purple Grape Iced"]},{"id":"airfuze-smart-40000","name":"Airfuze Smart 40000","cat":"puffs","sub":"Normal puffs","img":"images/airfuze-smart-40000.webp","glow":[249,96,24],"price":null,"specs":["40,000 puffs"],"kind":"flavor","options":["Blueberry Ice","Blueberry Watermelon","Strawberry Summer","Watermelon Ice","Grape Ice","Miami Mint","Bluerazz Ice","Juicy Peach"]},{"id":"airmez-20000","name":"Airmez 20000","cat":"puffs","sub":"Normal puffs","img":"images/airmez-20000.webp","glow":[193,122,93],"price":null,"specs":["20,000 puffs","2 mg"],"kind":"flavor","options":["Mango Peach","Grape Ice","Dr Blue","Blueberry Ice","Strawberry Ice","Mixed Berries","Strawberry Watermelon"]},{"id":"airmez-fox-120000","name":"Airmez Fox 120000","cat":"puffs","sub":"Normal puffs","img":"images/airmez-fox-120000.webp","glow":[235,36,35],"price":null,"specs":["120,000 puffs","4 flavors in one"],"kind":"combo","options":["Love 66 / Cherry / Blueberry Ice / Kiwi Passion Fruit","Watermelon Ice / Strawberry Watermelon / Raspberry Watermelon / Blueberry Raspberry","Grape Ice / Love 66 / Blueberry Ice / Dragon Fruit Ice","Strawberry Raspberry / Strawberry Kiwi / Strawberry Ice / Peach Mango Watermelon","Red Mojito / Love 66 / Mixed Berries / Strawberry Watermelon","Peach Ice / Pink Lemonade / Watermelon Ice / Dr Blue","Cherry Ice / Love 66 / Berry Lemonade / Grape Ice","Mango Peach / Tropical Fruit / Peach Ice / Sour Mango Pineapple","Peach Mango Watermelon / Blueberry Cherry / Watermelon Dragonfruit / Passion","Pink Lemonade / Passion Fruit / Mixed Berries / Triple Berry"]},{"id":"airmez-fox-80k","name":"Airmez Fox 80K","cat":"puffs","sub":"Normal puffs","img":"images/airmez-fox-80k.webp","glow":[164,97,176],"price":null,"specs":["80,000 puffs","2 flavors in one"],"kind":"combo","options":["Tropical Fruit / Love 66","Mixed Berries / Dr Blue","Blueberry Ice / Blueberry Raspberry","Strawberry Watermelon / Strawberry Raspberry","Peach Ice / Mango Peach","Bluerazz Lemonade / Bluerazz","Raspberry Watermelon / Watermelon Ice"]},{"id":"airmez-pen-cigarette","name":"Airmez Pen Cigarette","cat":"puffs","sub":"Normal puffs","img":"images/airmez-pen-cigarette.webp","glow":[5,89,117],"price":null,"specs":["Pen cigarette style"],"kind":"flavor","options":["Polar Mint","Double Strawberry","Tobacco","Black Grape","Bluerazz Ice"]},{"id":"atvs-40000","name":"ATVS 40000","cat":"puffs","sub":"Normal puffs","img":"images/atvs-40000.webp","glow":[157,88,219],"price":null,"specs":["40,000 puffs"],"kind":"flavor","options":["Triple Mango","Apple Ice"]},{"id":"bang-king-32k-switch","name":"Bang King 32K Switch","cat":"puffs","sub":"Normal puffs","img":"images/bang-king-32k-switch.webp","glow":[128,29,151],"price":null,"specs":["32,000 puffs","2 flavors in one"],"kind":"combo","options":["Watermelon Ice / Blueberry Mint","Blueberry Watermelon / Strawberry Mango"]},{"id":"bang-king-40000","name":"Bang King 40000","cat":"puffs","sub":"Normal puffs","img":"images/bang-king-40000.webp","glow":[179,62,79],"price":null,"specs":["40,000 puffs"],"kind":"flavor","options":["Watermelon","Strawberry Watermelon","Blueberry Ice","Mango Peach Watermelon","Strawberry Ice","Kiwi Passion Fruit","Watermelon Bubble Gum","Blueberry Grape","Peach Ice","Blueberry Raspberry","Strawberry Kiwi"]},{"id":"bang-king-85000","name":"Bang King 85000","cat":"puffs","sub":"Normal puffs","img":"images/bang-king-85000.webp","glow":[247,150,56],"price":null,"specs":["85,000 puffs","3 flavors in one"],"kind":"combo","options":["Blueberry Ice / Lemon Lime / Strawberry Watermelon","Watermelon Ice / Redbull / Strawberry Kiwi","Bluerazz Ice / Strawberry Watermelon / Watermelon Ice","Ice Tea Lemon Ice / Lyche Ice / Mango Ice","Strawberry Donut / Love 66 / Banana Ice","Strawberry Banana / Pink Lemonade / Raspberry Watermelon","Kiwi Passion Fruit Guava / Lush Ice / Strawberry Mango","Double Apple / Pineapple Ice / Fruit Fusion","Strawberry Vanilla Cake / Black Dragon Ice / Peach Ice","Strawberry Watermelon / Triple Melon / Strawberry Ice","Tropical Fruit / Lemon Peach / Strawberry Watermelon","Peach Mango / Bluerazz Cherry / Mint Ice","Berry Lemonade / Strawberry Redbull / Strawberry Ice","Mixed Berries / Mango Peach / Grape Ice"]},{"id":"bang-leader-80k","name":"Bang Leader 80K","cat":"puffs","sub":"Normal puffs","img":"images/bang-leader-80k.webp","glow":[178,59,131],"price":null,"specs":["80,000 puffs","3 flavors in one"],"kind":"combo","options":["Strawberry Watermelon / Grape Ice / Rainbow Candy","Blueberry Ice / Black Dragon Ice / Mango Peach","Blueberry Watermelon / Strawberry Mango / Blackcurrant","Red Bull / Blueberry Watermelon / Apple","Watermelon Ice / Strawberry Mango / Banana","Blueberry Ice / Strawberry Banana / Mixed Berries","Avocado Ice / Lemon Lime / Watermelon Raspberry","Redbull / Watermelon Bubble Candy / Strawberry Ice Cream","Raspberry Mojito Peach / Strawberry Watermelon / Kiwi Passion Fruit Guava"]},{"id":"coolplay-5000","name":"Coolplay 5000","cat":"puffs","sub":"Normal puffs","img":"images/coolplay-5000.webp","glow":[69,81,141],"price":null,"specs":["5,000 puffs"],"kind":"flavor","options":["Blueberry Ice","Watermelon Ice","Mixed Berries","Peach Mango","Passion Fruit","Black Grape"]},{"id":"keystone-tweak-60k","name":"Keystone Tweak 60K","cat":"puffs","sub":"Normal puffs","img":"images/keystone-tweak-60k.webp","glow":[42,123,181],"price":null,"specs":["60,000 puffs"],"kind":"flavor","options":["White Gummy Bear","Berry Bliss (Mixed Berries)","Sour Rainbow","Mango Magic","Watermelon Berry","Bluerazz Ice","Blueberry Mint"],"note":"Has an ice controller and a sweet and nicotine controller.","noteAr":"مزوّد بمتحكم للبرودة ومتحكم للحلاوة والنيكوتين."},{"id":"my-bar-20000","name":"My Bar 20000","cat":"puffs","sub":"Normal puffs","img":"images/my-bar-20000.webp","glow":[196,111,44],"price":null,"specs":["20,000 puffs"],"kind":"flavor","options":["Double Apple","Double Cherry","Mango Ice","Grape Ice","Berry Peach","Strawberry Ice","Blueberry Ice","Mixed Berries","Strawberry Mango"]},{"id":"nasty-machine","name":"Nasty Machine","cat":"puffs","sub":"Normal puffs","img":"images/nasty-machine.webp","glow":[219,12,136],"price":null,"specs":["Device only"],"kind":"color","options":["Navy Blue","Black"],"note":"Device only. The cartridge is sold separately.","noteAr":"الجهاز فقط. الخرطوشة تُباع منفصلة."},{"id":"nasty-pods-5000","name":"Nasty Pods 5000","cat":"puffs","sub":"Normal puffs","img":"images/nasty-pods-5000.webp","glow":[249,35,13],"price":null,"specs":["5,000 puffs"],"kind":"flavor","options":["Cherry Peach Lemon","Watermelon Ice","Strawberry Watermelon","Strawberry Ice","White Peach Raspberry","Mango Blackcurrant","Blueberry Ice","Blackcurrant","Peach Ice"]},{"id":"nexa-pro-30000","name":"Nexa Pro 30000","cat":"puffs","sub":"Normal puffs","img":"images/nexa-pro-30000.webp","glow":[53,106,145],"price":null,"specs":["30,000 puffs"],"kind":"flavor","options":["Mexican Mango","Sour Apple Ice","Blueberry Ice","Peach Mango Watermelon","Watermelon Ice","Pink Lemonade","Strawberry Ice","Grape Ice","Strawberry Watermelon","Blueberry Watermelon","Bluerazz Ice","Tropical Twist"]},{"id":"oxbar-panther-50k","name":"Oxbar Panther 50K","cat":"puffs","sub":"Normal puffs","img":"images/oxbar-panther-50k.webp","glow":[172,59,86],"price":null,"specs":["50,000 puffs"],"kind":"flavor","options":["Peach Ice","Tropical","Peach Bluerazz","Frozen Remix","Purple Ice"]},{"id":"posh-pro-max-smart-30000","name":"Posh Pro Max Smart 30000","cat":"puffs","sub":"Normal puffs","img":"images/posh-pro-max-smart-30000.webp","glow":[169,59,71],"price":13,"specs":["30,000 puffs"],"kind":"flavor","options":["Watermelon Ice","Berry Breeze","Blueberry Ice","Grape Pomegranate Ice","Bluerazz Cotton Cloudz","Strawberry Summer Time"]},{"id":"vanther-30000","name":"Vanther 30000","cat":"puffs","sub":"Normal puffs","img":"images/vanther-30000.webp","glow":[132,151,51],"price":null,"specs":["30,000 puffs"],"kind":"flavor","options":["Mixed Berries","Strawberry Ice","Peach Ice","Mango Ice","Grape Ice","Watermelon Ice"]},{"id":"vanther-plus-16000","name":"Vanther Plus 16000","cat":"puffs","sub":"Normal puffs","img":"images/vanther-plus-16000.webp","glow":[165,87,217],"price":null,"specs":["16,000 puffs"],"kind":"flavor","options":["Watermelon","Blueberry","Strawberry","Watermelon Bubblegum","Peach Strawberry","Strawberry Raspberry","Mixed Berries","Grape Ice"]},{"id":"aaok-shisha-80000","name":"Aaok Shisha 80000","cat":"puffs","sub":"Shisha puffs","img":"images/aaok-shisha-80000.webp","glow":[222,88,71],"price":null,"specs":["80,000 puffs"],"kind":"flavor","options":["Watermelon","Love 66","Watermelon Bubblegum","Mango Ice","Mixed Berries","Blueberry Ice","Lady Killer","Fizzy Cherry Cola","Strawberry Watermelon","Grape Ice"]},{"id":"airbar-shisha-5000","name":"Airbar Shisha 5000","cat":"puffs","sub":"Shisha puffs","img":"images/airbar-shisha-5000.webp","glow":[240,196,69],"price":null,"specs":["5,000 puffs"],"kind":"flavor","options":["Double Apple","Grape Mint","Mango Ice","Strawberry","Mixed Berries"]},{"id":"atvs-shisha-120k","name":"ATVS Shisha 120K","cat":"puffs","sub":"Shisha puffs","img":"images/atvs-shisha-120k.webp","glow":[29,102,149],"price":null,"specs":["120,000 puffs"],"kind":"flavor","options":["Double Apple","Cherry Ice","Mango Ice","Blackcurrant Ice"]},{"id":"bang-blaze-shisha-40000","name":"Bang Blaze Shisha 40000","cat":"puffs","sub":"Shisha puffs","img":"images/bang-blaze-shisha-40000.webp","glow":[229,141,47],"price":null,"specs":["40,000 puffs"],"kind":"flavor","options":["Blueberry Ice","Watermelon","Strawberry Watermelon","Strawberry Ice","Redbull","Peach Ice","Blueberry Raspberry","Mixed Fruit","Mango Peach","Pina Colada"]},{"id":"bang-shisha-42000","name":"Bang Shisha 42000","cat":"puffs","sub":"Shisha puffs","img":"images/bang-shisha-42000.webp","glow":[224,194,85],"price":null,"specs":["42,000 puffs"],"kind":"flavor","options":["Mint","Strawberry Watermelon","Double Apple"]},{"id":"hookalit-shisha-40000","name":"Hookalit Shisha 40000","cat":"puffs","sub":"Shisha puffs","img":"images/hookalit-shisha-40000.webp","glow":[224,89,104],"price":null,"specs":["40,000 puffs"],"kind":"flavor","options":["Passion Fruit","Strawberry Kiwi","Brown Ale","Mixed Berries"]},{"id":"mazaya-20000","name":"Mazaya 20000","cat":"puffs","sub":"Shisha puffs","img":"images/mazaya-20000.webp","glow":[207,116,15],"price":null,"specs":["20,000 puffs"],"kind":"flavor","options":["Mango","Blueberry Ice","Mixed Berries","Lush Ice","Two Apple","Lemon Mint"]},{"id":"nasty-shisha-10000","name":"Nasty Shisha 10000","cat":"puffs","sub":"Shisha puffs","img":"images/nasty-shisha-10000.webp","glow":[46,88,127],"price":null,"specs":["10,000 puffs"],"kind":"flavor","options":["Watermelon Ice","Vimto Bull","Shisha Double Apple","Shisha Lemon Mint","Bad Blood","Grape Ice","Lemon Cherry","Apple Peach","Berry Grape","Blue Raspberry Lemonade","Artik Mint","Bluerazz Ice","Grape Raspberry Ice","Strawberry Guava Kiwi","Blue Sour Raspberry","Shisha Mixed Melon Mint"]},{"id":"peakbar-shisha-25000","name":"Peakbar Shisha 25000","cat":"puffs","sub":"Shisha puffs","img":"images/peakbar-shisha-25000.webp","glow":[214,150,81],"price":null,"specs":["25,000 puffs"],"kind":"flavor","options":["Watermelon Ice","Mango Ice","Two Apple","Black Currant Ice","Grape Ice","Magic Love","Blue Razz Lemonade","Love 66","Frozen Strawberry","Lady Killer","Blueberry Gum","Gum Flavor","Blow Pop","Lemon Mint"]}]}</script>
 <script id="app">(function(){
 'use strict';
 /* ---------- languages: English and Arabic (RTL). Product and flavor names stay as the shop writes them. */
@@ -597,9 +686,84 @@ function fold(s){
 }
 function tokNorm(s){ return fold(s).replace(/^ال(?=.{3})/, ''); }
 
+
+/* ---------- extra words for the website's own admin (sign-in, admins, saving). Same two languages as the rest. */
+function minEn(n){ return n + (n === 1 ? ' minute' : ' minutes'); }
+function minAr(n){ return n === 1 ? 'دقيقة' : n === 2 ? 'دقيقتين' : n <= 10 ? n + ' دقائق' : n + ' دقيقة'; }
+Object.assign(T.en, {
+  staff:'Staff sign-in',
+  auTitle:'Staff sign-in', auSub:'For the shop team only.', auUser:'Username', auPass:'Password', auShow:'Show', auHide:'Hide', auGo:'Sign in', auWait:'Signing in…',
+  auForgot:'Forgot your password? Ask the shop owner to reset it.',
+  suTitle:'Set up the owner account', suSub:'This site has no admin yet. Create the first account to start managing products.',
+  suCode:'Setup code', suCodeHelp:'The code you were given when this site was created.', suName:'Your name', suUser:'Choose a username', suPass:'Choose a password', suPass2:'Repeat the password',
+  suGo:'Create owner account', suMismatch:'The two passwords do not match.', passHint:'At least 8 characters.',
+  eBadLogin:'Wrong username or password.', eMissing:'Enter your username and password.',
+  eLocked:function(sec){ return 'Too many wrong tries. Wait ' + minEn(Math.max(1, Math.ceil(sec / 60))) + ' and try again.'; },
+  eNet:'Could not reach the server. Check your connection and try again.', eBadCode:'That setup code is not right.',
+  eWeak:'Use at least 8 characters, and nothing too common like “password” or “12345678”.',
+  eUsername:'Username: 3 to 24 letters, numbers, dots, dashes or underscores, starting with a letter or number.',
+  eTaken:'That username is already used.', eTooMany:'You have reached the limit of 25 admins.', eOwnerOnly:'Only the owner can do this.',
+  eSelf:'You cannot remove your own account.', eNoAdmin:'That admin no longer exists.',
+  eSignedOut:'You are signed out. Sign in again; your edits here are kept.', eSetupOff:'Setup is turned off on this site.',
+  eAlready:'The owner account already exists. Sign in instead.', eGeneric:'Something went wrong. Try again.', eBusy:'The server is busy. Try again in a moment.',
+  eBadProduct:function(n){ return 'Check “' + (n || 'this product') + '”: one of its fields is not valid.'; },
+  eCurrent:'Your current password is wrong.',
+  aSub:'Changes go live for customers as soon as you save.',
+  aSigned:function(n, r){ return 'Signed in as ' + n + ' · ' + r; }, roleOwner:'Owner', roleAdmin:'Admin',
+  aBtnPeople:'Admins', aBtnAccount:'My account', aOut:'Sign out', aOut2:'Unsaved changes will be lost. Tap again to sign out.',
+  aSave:function(n){ return n ? 'Save changes (' + n + ')' : 'Save changes'; },
+  aSaved:'Saved. Customers see the changes now.', aLoading:'Loading…', aLoadFail:'Could not load the newest list, so this is the list from when the page opened.',
+  aConflict:function(names){ return 'Someone else changed ' + names + ' at the same time. Their version is shown and your edits to it were not saved. Your other changes are still here: save again.'; },
+  aOutDone:'Signed out.', aDismiss:'Dismiss', aErrConflict:'Someone else changed some of these products.', aErrLarge:'The list is too large to save. Remove some products or options.',
+  aErrOff:'Photos cannot be uploaded right now.', aErrGeneric:'Could not save. Your changes are still here; try again.',
+  pTitle:'Admins and account', pAccount:'Your account', pChangePw:'Change password', pCur:'Current password', pNew:'New password', pNew2:'Repeat the new password', pSavePw:'Change password',
+  pPwDone:'Password changed. Your other devices were signed out.', pMismatch:'The two passwords do not match.',
+  pTeam:'Admins', pTeamSub:'People who can sign in and edit products. Only you can add or remove admins.', pYou:'You',
+  pReset:'Reset password', pResetGo:'Set new password', pRemove:'Remove', pRemove2:'Tap again to remove',
+  pRemoved:function(n){ return n + ' was removed and signed out.'; }, pResetDone:function(n){ return 'New password set for ' + n + '. They were signed out.'; },
+  pAdd:'Add an admin', pName:'Name (optional)', pUser:'Username', pPass:'Password', pGen:'Generate', pAddGo:'Add admin',
+  pAdded:function(n){ return n + ' can sign in now.'; }, pShare:'Send these details to them. The password is shown only now.', pCopy:'Copy details', pCopied:'Details copied.', pCopyFail:'Could not copy. Select the text and copy it.',
+  pShareTxt:function(url, u, p){ return 'King Vape admin\nSign in: ' + url + '\nUsername: ' + u + '\nPassword: ' + p + '\nPlease change the password after you sign in (Admins and account).'; },
+  pLoading:'Loading…'
+});
+Object.assign(T.ar, {
+  staff:'دخول الفريق',
+  auTitle:'دخول الفريق', auSub:'لفريق المتجر فقط.', auUser:'اسم المستخدم', auPass:'كلمة المرور', auShow:'إظهار', auHide:'إخفاء', auGo:'تسجيل الدخول', auWait:'جارٍ الدخول…',
+  auForgot:'نسيت كلمة المرور؟ اطلب من مالك المتجر إعادة تعيينها.',
+  suTitle:'إعداد حساب المالك', suSub:'لا يوجد مسؤول على هذا الموقع بعد. أنشئ أول حساب لتبدأ بإدارة المنتجات.',
+  suCode:'رمز الإعداد', suCodeHelp:'الرمز الذي أُعطيته عند إنشاء هذا الموقع.', suName:'اسمك', suUser:'اختر اسم مستخدم', suPass:'اختر كلمة مرور', suPass2:'أعد كتابة كلمة المرور',
+  suGo:'إنشاء حساب المالك', suMismatch:'كلمتا المرور غير متطابقتين.', passHint:'8 أحرف على الأقل.',
+  eBadLogin:'اسم المستخدم أو كلمة المرور غير صحيحة.', eMissing:'أدخل اسم المستخدم وكلمة المرور.',
+  eLocked:function(sec){ return 'محاولات خاطئة كثيرة. انتظر ' + minAr(Math.max(1, Math.ceil(sec / 60))) + ' ثم حاول مجدداً.'; },
+  eNet:'تعذّر الوصول إلى الخادم. تحقق من الاتصال وحاول مجدداً.', eBadCode:'رمز الإعداد غير صحيح.',
+  eWeak:'استخدم 8 أحرف على الأقل، وتجنّب الكلمات الشائعة مثل «password» أو «12345678».',
+  eUsername:'اسم المستخدم: من 3 إلى 24 حرفاً أو رقماً أو نقطة أو شرطة، ويبدأ بحرف أو رقم.',
+  eTaken:'اسم المستخدم هذا مستخدم من قبل.', eTooMany:'وصلت إلى الحد الأقصى: 25 مسؤولاً.', eOwnerOnly:'هذا الإجراء للمالك فقط.',
+  eSelf:'لا يمكنك حذف حسابك.', eNoAdmin:'هذا المسؤول لم يعد موجوداً.',
+  eSignedOut:'تم تسجيل خروجك. سجّل الدخول مجدداً؛ تعديلاتك هنا محفوظة.', eSetupOff:'الإعداد مغلق على هذا الموقع.',
+  eAlready:'حساب المالك موجود بالفعل. سجّل الدخول.', eGeneric:'حدث خطأ. حاول مجدداً.', eBusy:'الخادم مشغول. حاول بعد قليل.',
+  eBadProduct:function(n){ return 'راجع «' + (n || 'هذا المنتج') + '»: أحد حقوله غير صالح.'; },
+  eCurrent:'كلمة المرور الحالية غير صحيحة.',
+  aSub:'تظهر التغييرات للزبائن فور الحفظ.',
+  aSigned:function(n, r){ return 'مسجّل الدخول باسم ' + n + ' · ' + r; }, roleOwner:'المالك', roleAdmin:'مسؤول',
+  aBtnPeople:'المسؤولون', aBtnAccount:'حسابي', aOut:'تسجيل الخروج', aOut2:'ستضيع التغييرات غير المحفوظة. اضغط مجدداً للخروج.',
+  aSave:function(n){ return n ? 'حفظ التغييرات (' + n + ')' : 'حفظ التغييرات'; },
+  aSaved:'تم الحفظ. الزبائن يرون التغييرات الآن.', aLoading:'جارٍ التحميل…', aLoadFail:'تعذّر تحميل أحدث قائمة، لذلك هذه هي القائمة وقت فتح الصفحة.',
+  aConflict:function(names){ return 'شخص آخر عدّل ' + names + ' في نفس الوقت. تظهر نسخته الآن ولم تُحفظ تعديلاتك عليه. تعديلاتك الأخرى ما زالت هنا: احفظ مجدداً.'; },
+  aOutDone:'تم تسجيل الخروج.', aDismiss:'إخفاء', aErrConflict:'شخص آخر عدّل بعض هذه المنتجات.', aErrLarge:'القائمة كبيرة جداً للحفظ. احذف بعض المنتجات أو الخيارات.',
+  aErrOff:'لا يمكن رفع الصور الآن.', aErrGeneric:'تعذّر الحفظ. تعديلاتك ما زالت هنا؛ حاول مجدداً.',
+  pTitle:'المسؤولون والحساب', pAccount:'حسابك', pChangePw:'تغيير كلمة المرور', pCur:'كلمة المرور الحالية', pNew:'كلمة المرور الجديدة', pNew2:'أعد كتابة كلمة المرور الجديدة', pSavePw:'تغيير كلمة المرور',
+  pPwDone:'تم تغيير كلمة المرور. تم تسجيل خروجك من أجهزتك الأخرى.', pMismatch:'كلمتا المرور غير متطابقتين.',
+  pTeam:'المسؤولون', pTeamSub:'الأشخاص الذين يمكنهم تسجيل الدخول وتعديل المنتجات. أنت وحدك تضيف المسؤولين أو تحذفهم.', pYou:'أنت',
+  pReset:'إعادة تعيين كلمة المرور', pResetGo:'تعيين كلمة المرور', pRemove:'حذف', pRemove2:'اضغط مجدداً للحذف',
+  pRemoved:function(n){ return 'تم حذف ' + n + ' وتسجيل خروجه.'; }, pResetDone:function(n){ return 'تم تعيين كلمة مرور جديدة لـ ' + n + ' وتسجيل خروجه.'; },
+  pAdd:'إضافة مسؤول', pName:'الاسم (اختياري)', pUser:'اسم المستخدم', pPass:'كلمة المرور', pGen:'توليد', pAddGo:'إضافة مسؤول',
+  pAdded:function(n){ return 'يمكن لـ ' + n + ' تسجيل الدخول الآن.'; }, pShare:'أرسل له هذه البيانات. كلمة المرور تظهر الآن فقط.', pCopy:'نسخ البيانات', pCopied:'تم نسخ البيانات.', pCopyFail:'تعذّر النسخ. حدّد النص وانسخه.',
+  pShareTxt:function(url, u, p){ return 'إدارة King Vape\nالدخول: ' + url + '\nاسم المستخدم: ' + u + '\nكلمة المرور: ' + p + '\nيرجى تغيير كلمة المرور بعد الدخول (المسؤولون والحساب).'; },
+  pLoading:'جارٍ التحميل…'
+});
+
 var $ = function(s){ return document.querySelector(s); };
-var SKEL = "\u003c!doctype html>\u003chtml>\u003chead>\u003cmeta charset=utf8>\u003cmeta name=viewport content=\"width=device-width,initial-scale=1,viewport-fit=cover\">\u003cstyle>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}\u003c/style>\u003c/head>\u003cbody>\n";
-var HEAD = "\u003ctitle>King Vape Catalogue\u003c/title>\n\u003cmeta name=\"claude:viewport-fit-sides\" content=\"cover\">\n\u003clink rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n\u003clink rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n\u003clink rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=DM+Sans:wght@400;500;700&family=Marcellus&display=swap\">\n";
 var DATA = JSON.parse(document.getElementById('data').textContent);
 var SHOP = DATA.shop, PRODUCTS = DATA.products;
 var store = {
@@ -608,7 +772,8 @@ var store = {
   del: function(k){ try { localStorage.removeItem(k); } catch (e) {} }
 };
 var lang = (function(){ var s = store.get('kv-lang'); if (s === 'ar' || s === 'en') return s; return /^ar/i.test(navigator.language || '') ? 'ar' : 'en'; })();
-var admin = { on: false, art: null, assets: null };   /* set once the platform says this viewer can edit */
+var admin = { on: false, me: null, upload: null };   /* set once the server says this visitor is a signed-in admin */
+var NEW_IMG = 'data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M10 24l12 10 10-18 10 18 12-10-3 26H13z" fill="none" stroke="#dbbd84" stroke-width="3" stroke-linejoin="round"/><path d="M13 54h38" stroke="#dbbd84" stroke-width="3" stroke-linecap="round"/></svg>');
 
 document.body.insertAdjacentHTML('beforeend', document.getElementById('tpl').textContent);
 
@@ -739,6 +904,50 @@ function renderBars(){
 }
 function render(){ renderTabs(); renderGrid(); renderBars(); }
 
+/* ---------- live catalogue: the page ships with a built-in list, then the server's newest list replaces it */
+var lastCatalog = 0;
+function normProduct(p){
+  if (!p || typeof p.id !== 'string' || typeof p.name !== 'string' || !catOf(p.cat)) return null;
+  var q = {}, k;
+  for (k in p) if (Object.prototype.hasOwnProperty.call(p, k)) q[k] = p[k];
+  q.options = Array.isArray(p.options) ? p.options.filter(function(o){ return typeof o === 'string'; }) : [];
+  q.specs = Array.isArray(p.specs) ? p.specs.filter(function(o){ return typeof o === 'string'; }) : [];
+  q.off = Array.isArray(p.off) ? p.off.filter(function(o){ return q.options.indexOf(o) > -1; }) : undefined;
+  if (!q.off || !q.off.length) delete q.off;
+  q.glow = Array.isArray(p.glow) && p.glow.length === 3 ? p.glow : [120, 110, 90];
+  q.price = typeof p.price === 'number' ? p.price : null;
+  q.img = p.img || NEW_IMG;
+  q.sub = p.sub || null;
+  return q;
+}
+function pruneCart(){
+  var before = cart.length;
+  cart = cart.filter(function(l){
+    var p = byId[l.id];
+    if (!p) return false;
+    if (p.options.length ? p.options.indexOf(l.opt) < 0 : l.opt !== '') return false;
+    return isOn(p) && !(l.opt && !optOn(p, l.opt));
+  });
+  if (cart.length !== before) saveCart();
+  return cart.length !== before;
+}
+function applyCatalog(cat, force){
+  if (!cat || !Array.isArray(cat.products)) return false;
+  if (!force && DATA.rev === cat.rev) return false;
+  var list = cat.products.map(normProduct).filter(Boolean);
+  PRODUCTS.length = 0; list.forEach(function(p){ PRODUCTS.push(p); });
+  DATA.rev = cat.rev; lastCatalog = Date.now(); indexProducts();
+  var lost = pruneCart();
+  render();
+  if ($('#cart').open) renderCart();
+  if (lost) toast(t('tDropped'), true);
+  return true;
+}
+function fetchCatalog(){
+  lastCatalog = Date.now();
+  return fetch('/api/catalog', { cache: 'no-cache', headers: { accept: 'application/json' } }).then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; });
+}
+
 var toastTimer;
 function toast(msg, bad){
   var el = $('#toast'); el.textContent = msg; el.hidden = false; el.classList.toggle('bad', !!bad);
@@ -795,6 +1004,8 @@ function applyLang(){
   if ($('#cart').open) renderCart();
   if ($('#sheet').open && cur) openProduct(cur.id, true);
   if (admin.on && $('#admin').open) adminRender();
+  if ($('#auth').open) renderAuth();
+  if ($('#people').open && admin.on) peopleRender();
 }
 function setLang(l){ lang = l; store.set('kv-lang', l); applyLang(); }
 function toggleLang(){ setLang(lang === 'ar' ? 'en' : 'ar'); }
@@ -1001,13 +1212,7 @@ $('#g-no').addEventListener('click', function(){ $('#g-ask').hidden = true; $('#
 
 
 /* ---------- admin: edit the catalogue in a working copy, then save it by publishing the page again */
-var work = null, dirty = {}, openId = null, afilter = { q: '', sold: false }, saving = false, restoreStash = null;
-var NEW_IMG = 'data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M10 24l12 10 10-18 10 18 12-10-3 26H13z" fill="none" stroke="#dbbd84" stroke-width="3" stroke-linejoin="round"/><path d="M13 54h38" stroke="#dbbd84" stroke-width="3" stroke-linecap="round"/></svg>');
-var sstore = {
-  get: function(k){ try { return sessionStorage.getItem(k); } catch (e) { return null; } },
-  set: function(k, v){ try { sessionStorage.setItem(k, v); } catch (e) {} },
-  del: function(k){ try { sessionStorage.removeItem(k); } catch (e) {} }
-};
+var work = null, dirty = {}, gone = {}, openId = null, afilter = { q: '', sold: false }, saving = false, notice = null;
 function clone(p){ var c = JSON.parse(JSON.stringify(p, function(k, v){ return k === '_hay' ? undefined : v; })); return c; }
 function wid(id){ for (var i = 0; i < work.length; i++) if (work[i].id === id) return work[i]; return null; }
 function dirtyCount(){ return Object.keys(dirty).length; }
@@ -1065,8 +1270,8 @@ function edH(p){
   var subSel = c.subs.length ? '<label><b>' + t('aSub2') + '</b><select data-f="sub">' + c.subs.map(function(s){ return '<option value="' + esc(s.id) + '"' + (s.id === p.sub ? ' selected' : '') + '>' + esc(cl(s)) + '</option>'; }).join('') + '</select></label>' : '';
   return '<div class="a-ed">' + optsH(p) +
     '<div class="a-photo" style="--glow:rgb(' + p.glow.join(',') + ')"><div class="pv"><img src="' + esc(p.img) + '" alt=""></div><div>' +
-      (admin.assets ? '<button class="btn sm" type="button" data-act="photo">' + t('aChangePhoto') + '</button><input type="file" accept="image/*" hidden data-f="photo">' : '') +
-      '<p>' + (admin.assets ? t('aPhotoHint') : t('aErrOff')) + '</p></div></div>' +
+      (admin.upload ? '<button class="btn sm" type="button" data-act="photo">' + t('aChangePhoto') + '</button><input type="file" accept="image/*" hidden data-f="photo">' : '') +
+      '<p>' + (admin.upload ? t('aPhotoHint') : t('aErrOff')) + '</p></div></div>' +
     '<div class="grid2"><label><b>' + t('aName') + '</b><input type="text" data-f="name" value="' + esc(p.name) + '" autocomplete="off"></label>' +
     '<label><b>' + t('aNameAr') + '</b><input type="text" data-f="nameAr" dir="rtl" lang="ar" value="' + esc(p.nameAr || '') + '" autocomplete="off"></label></div>' +
     '<div class="grid2"><label><b>' + t('aCat') + '</b><select data-f="cat">' + catOpts + '</select></label>' + subSel + '</div>' +
@@ -1091,14 +1296,17 @@ function adminList(){
 }
 function adminBanner(){
   var b = $('#a-banner');
-  if (!restoreStash) { b.hidden = true; return; }
+  if (!notice) { b.hidden = true; return; }
   b.hidden = false;
-  b.innerHTML = '<span>' + t('aRestore') + '</span><span style="display:flex;gap:8px"><button class="btn sm gold" type="button" data-act="restore">' + t('aRestoreBtn') + '</button><button class="btn sm" type="button" data-act="dropstash">' + t('aDropBtn') + '</button></span>';
+  b.innerHTML = '<span>' + esc(notice) + '</span><button class="btn sm" type="button" data-act="dropnotice">' + t('aDismiss') + '</button>';
 }
 function adminRender(){
   if (!work) work = PRODUCTS.map(clone);
   document.querySelectorAll('#admin [data-i]').forEach(function(el){ el.textContent = t(el.dataset.i); });
   $('#a-q').placeholder = t('aSearch');
+  $('#a-sub').textContent = admin.me ? t('aSigned', admin.me.name, t(admin.me.role === 'owner' ? 'roleOwner' : 'roleAdmin')) : t('aSub');
+  $('#a-people').textContent = t(admin.me && admin.me.role === 'owner' ? 'aBtnPeople' : 'aBtnAccount');
+  $('#a-out').textContent = t('aOut'); delete $('#a-out').dataset.armed;
   adminBanner(); adminList(); aFoot();
 }
 function adminOpen(id){
@@ -1147,7 +1355,9 @@ $('#a-list').addEventListener('click', function(e){
     it.querySelector('input[data-f="photo"]').click();
   } else if (act === 'del') {
     if (b.dataset.armed) {
-      work.splice(work.indexOf(p), 1); dirty[p.id] = true; openId = null; scrollKeep(adminList); aFoot();
+      work.splice(work.indexOf(p), 1); openId = null;
+      if (p.isNew) delete dirty[p.id]; else { dirty[p.id] = true; gone[p.id] = p.u | 0; }   /* a product that was never saved needs no delete */
+      scrollKeep(adminList); aFoot();
     } else {
       b.dataset.armed = '1'; b.textContent = t('aDelProd2');
       setTimeout(function(){ if (b.isConnected) { delete b.dataset.armed; b.textContent = t('aDelProd'); } }, 3000);
@@ -1189,25 +1399,17 @@ $('#a-add').addEventListener('click', function(){
   adminList(); aFoot();
   var nm = document.querySelector('.a-item[data-id="' + id + '"] [data-f="name"]'); if (nm) { nm.scrollIntoView({ block: 'center' }); nm.focus(); }
 });
-$('#a-discard').addEventListener('click', function(){ work = null; dirty = {}; openId = null; adminRender(); });
+$('#a-discard').addEventListener('click', function(){ work = null; dirty = {}; gone = {}; notice = null; openId = null; adminRender(); });
 $('#a-banner').addEventListener('click', function(e){
   var b = e.target.closest('[data-act]'); if (!b) return;
-  if (b.dataset.act === 'restore' && restoreStash) {
-    if (!work) work = PRODUCTS.map(clone);
-    Object.keys(restoreStash.ch).forEach(function(id){
-      var v = restoreStash.ch[id], i = -1; work.forEach(function(w, j){ if (w.id === id) i = j; });
-      if (v === null) { if (i > -1) work.splice(i, 1); } else if (i > -1) work[i] = v; else { v.isNew = true; work.push(v); }
-      dirty[id] = true;
-    });
-  }
-  restoreStash = null; sstore.del('kv-admin-stash'); adminRender();
+  if (b.dataset.act === 'dropnotice') { notice = null; adminBanner(); }
 });
 $('#a-close').addEventListener('click', function(){ closeD($('#admin')); });
-$('#adminbtn').addEventListener('click', function(){ adminOpen(); });
-$('#s-edit').addEventListener('click', function(){ var id = cur && cur.id; closeD($('#sheet')); if (id) adminOpen(id); });
+$('#adminbtn').addEventListener('click', function(){ openAdminPanel(); });
+$('#s-edit').addEventListener('click', function(){ var id = cur && cur.id; closeD($('#sheet')); if (id) openAdminPanel(id); });
 window.addEventListener('beforeunload', function(e){ if (dirtyCount() && !saving) { e.preventDefault(); e.returnValue = ''; } });
 
-/* ---- photos: shrink in the browser, store as an asset, point the product at it */
+/* ---- photos: shrink in the browser, upload to the server, point the product at it */
 function hsv(r, g, b){
   r /= 255; g /= 255; b /= 255;
   var mx = Math.max(r, g, b), mn = Math.min(r, g, b), d = mx - mn, h = 0;
@@ -1234,10 +1436,10 @@ function glowOf(img){
 }
 function pickPhoto(p, file, it){
   var pv = it.querySelector('.a-photo .pv');
-  if (!admin.assets) { toast(t('aErrOff'), true); return; }
+  if (!admin.upload) { toast(t('aErrOff'), true); return; }
   pv.classList.add('busy'); pv.dataset.busy = t('aUploading');
   var url = URL.createObjectURL(file), im = new Image();
-  function fail(){ pv.classList.remove('busy'); URL.revokeObjectURL(url); toast(t('aPhotoFail'), true); }
+  function fail(){ pv.classList.remove('busy'); URL.revokeObjectURL(url); aStatus(t('aPhotoFail'), true); }
   im.onerror = fail;
   im.onload = function(){
     var s = Math.min(1, 900 / Math.max(im.naturalWidth, im.naturalHeight)), c = document.createElement('canvas');
@@ -1246,8 +1448,8 @@ function pickPhoto(p, file, it){
     var glow = glowOf(im);
     c.toBlob(function(blob){
       if (!blob) return fail();
-      admin.assets.upload(blob).then(function(r){
-        p.img = '/_blob/' + r.id; p.glow = glow; touch(p);
+      admin.upload(blob).then(function(url){
+        p.img = url; p.glow = glow; touch(p);
         URL.revokeObjectURL(url);
         scrollKeep(function(){ refreshItem(p); });
       }, fail);
@@ -1256,16 +1458,9 @@ function pickPhoto(p, file, it){
   im.src = url;
 }
 
-/* ---- save: rebuild this very page with the new data and publish it */
-function buildDoc(data){
-  var S = '</' + 'script>';
-  return SKEL + HEAD + '<style id="css">' + document.getElementById('css').textContent + '</style>\n' +
-    '<script type="text/html" id="tpl">' + document.getElementById('tpl').textContent + S + '\n' +
-    '<script type="application/json" id="data">' + JSON.stringify(data).replace(/</g, '\\u003c') + S + '\n' +
-    '<script id="app">' + document.getElementById('app').textContent + S + '\n\n</body></html>';
-}
+/* ---- what the server stores for one product (it checks everything again on its side) */
 function cleanProduct(p){
-  var c = { id: p.id, name: (p.name || '').trim(), cat: p.cat, sub: p.sub || null, img: p.img, glow: p.glow, price: p.price == null ? null : p.price,
+  var c = { id: p.id, name: (p.name || '').trim(), cat: p.cat, sub: p.sub || null, img: p.img === NEW_IMG ? '' : p.img, glow: p.glow, price: p.price == null ? null : p.price,
     specs: (p.specs || []).slice(), kind: p.kind || 'flavor', options: [] }, seen = {};
   (p.options || []).forEach(function(o){ o = String(o).trim(); if (o && !seen[o]) { seen[o] = 1; c.options.push(o); } });
   var off = (p.off || []).map(function(o){ return String(o).trim(); }).filter(function(o){ return c.options.indexOf(o) > -1; });
@@ -1274,61 +1469,377 @@ function cleanProduct(p){
   ['nameAr', 'note', 'noteAr'].forEach(function(k){ if (p[k] && String(p[k]).trim()) c[k] = String(p[k]).trim(); });
   return c;
 }
-function publishOnce(html, retried){
-  return admin.art.publish(html).catch(function(err){
-    if (err && err.code === 'upstream_error' && !retried) return new Promise(function(res){ setTimeout(res, 600 + Math.random() * 800); }).then(function(){ return publishOnce(html, true); });
-    throw err;
+
+
+/* ---------- the website's own admin: sign in, load the newest list, save through the server, manage admins */
+var API = {
+  call: function(method, url, body, raw){
+    var opt = { method: method, credentials: 'same-origin', headers: { 'X-KV': '1' } };
+    if (body !== undefined) {
+      if (raw) { opt.body = body; opt.headers['Content-Type'] = body.type || 'application/octet-stream'; }
+      else { opt.body = JSON.stringify(body); opt.headers['Content-Type'] = 'application/json'; }
+    }
+    return fetch(url, opt).then(function(r){
+      return r.json().then(function(d){ return d; }, function(){ return {}; }).then(function(d){
+        if (r.ok) return d;
+        var e = new Error(d.error || ('http_' + r.status));
+        e.status = r.status; e.code = d.error || ('http_' + r.status); e.data = d;
+        throw e;
+      });
+    }, function(){ var e = new Error('network'); e.code = 'network'; throw e; });
+  }
+};
+
+function errText(e){
+  var c = e && e.code, d = (e && e.data) || {};
+  if (c === 'network') return t('eNet');
+  if (c === 'bad_login') return t('eBadLogin');
+  if (c === 'locked') return t('eLocked', d.retry || 60);
+  if (c === 'weak_password') return t('eWeak');
+  if (c === 'bad_username') return t('eUsername');
+  if (c === 'name_taken') return t('eTaken');
+  if (c === 'too_many_admins') return t('eTooMany');
+  if (c === 'owner_only') return t('eOwnerOnly');
+  if (c === 'cannot_remove_self') return t('eSelf');
+  if (c === 'no_such_admin') return t('eNoAdmin');
+  if (c === 'signed_out') return t('eSignedOut');
+  if (c === 'bad_code') return t('eBadCode');
+  if (c === 'setup_disabled') return t('eSetupOff');
+  if (c === 'already_setup') return t('eAlready');
+  if (c === 'missing') return t('eMissing');
+  if (c === 'busy') return t('eBusy');
+  if (c === 'too_large') return t('aErrLarge');
+  if (c === 'bad_product') { var bp = d.id && work && wid(d.id); return t('eBadProduct', bp && bp.name); }
+  return t('eGeneric');
+}
+
+/* ---- who is signed in */
+function setMe(m){
+  admin.me = m; admin.on = !!m; admin.upload = m ? uploadPhoto : null;
+  $('#adminbtn').hidden = !m;
+  $('#s-edit').hidden = !m;
+  if (m) store.set('kv-staff', '1'); else store.del('kv-staff');
+}
+function onSignedOut(){ setMe(null); }
+function uploadPhoto(blob){
+  return API.call('POST', '/api/admin?a=photo', blob, true).then(function(d){ return d.url; }, function(e){ if (e.status === 401) onSignedOut(); throw e; });
+}
+
+/* ---- sign-in / first-time setup dialog */
+var authMode = 'login', authThen = null, authBusy = false;
+function authMsg(text){ var m = $('#au-msg'); m.hidden = !text; m.textContent = text || ''; }
+function showLabel(b){ var inp = document.getElementById(b.dataset.show); b.textContent = t(inp && inp.type === 'text' ? 'auHide' : 'auShow'); }
+function renderAuth(){
+  var setup = authMode === 'setup';
+  $('#au-title').textContent = t(setup ? 'suTitle' : 'auTitle');
+  $('#au-sub').textContent = t(setup ? 'suSub' : 'auSub');
+  document.querySelectorAll('#au-form .f-setup').forEach(function(el){ el.hidden = !setup; });
+  $('#au-user-l').textContent = t(setup ? 'suUser' : 'auUser');
+  $('#au-pass-l').textContent = t(setup ? 'suPass' : 'auPass');
+  $('#au-pass').autocomplete = setup ? 'new-password' : 'current-password';
+  $('#au-go span').textContent = t(authBusy ? 'auWait' : setup ? 'suGo' : 'auGo');
+  $('#au-forgot').textContent = t('auForgot'); $('#au-forgot').hidden = setup;
+  document.querySelectorAll('#auth [data-show]').forEach(showLabel);
+}
+function openAuth(then){
+  authThen = then || null; authMode = 'login'; authBusy = false;
+  ['au-code', 'au-name', 'au-user', 'au-pass', 'au-pass2'].forEach(function(id){ document.getElementById(id).value = ''; });
+  ['au-pass', 'au-pass2'].forEach(function(id){ document.getElementById(id).type = 'password'; });
+  $('#au-go').disabled = false; authMsg(''); renderAuth(); openD($('#auth'));
+  API.call('GET', '/api/auth').then(function(s){
+    if (s.me) { setMe(s.me); closeD($('#auth')); var f = authThen; authThen = null; if (f) f(); return; }
+    var want = s.setup ? 'setup' : 'login';
+    if (want !== authMode) { authMode = want; renderAuth(); }
+    var first = $(want === 'setup' ? '#au-code' : '#au-user'); if (first && $('#auth').open) first.focus();
+  }, function(e){ authMsg(errText(e)); });
+}
+$('#au-form').addEventListener('submit', function(e){
+  e.preventDefault();
+  if (authBusy) return;
+  var user = $('#au-user').value.trim(), pass = $('#au-pass').value, body;
+  authMsg('');
+  if (!user || !pass) { authMsg(t('eMissing')); return; }
+  if (authMode === 'setup') {
+    if (pass !== $('#au-pass2').value) { authMsg(t('suMismatch')); return; }
+    body = { a: 'setup', code: $('#au-code').value, name: $('#au-name').value, username: user, password: pass };
+  } else body = { a: 'login', username: user, password: pass };
+  authBusy = true; $('#au-go').disabled = true; renderAuth();
+  API.call('POST', '/api/auth', body).then(function(d){
+    authBusy = false; $('#au-go').disabled = false;
+    $('#au-pass').value = ''; $('#au-pass2').value = '';
+    setMe(d.me); closeD($('#auth'));
+    var f = authThen; authThen = null; if (f) f();
+  }, function(err){
+    authBusy = false; $('#au-go').disabled = false;
+    if (err.code === 'already_setup') authMode = 'login';
+    renderAuth(); authMsg(errText(err));
+    if (err.code === 'bad_login') { $('#au-pass').value = ''; $('#au-pass').focus(); }
   });
+});
+$('#au-close').addEventListener('click', function(){ closeD($('#auth')); });
+$('#auth').addEventListener('click', function(e){ if (e.target === this) closeD(this); });
+$('#auth').addEventListener('close', function(){ $('#au-pass').value = ''; $('#au-pass2').value = ''; authThen = null; });
+document.addEventListener('click', function(e){
+  var b = e.target.closest && e.target.closest('[data-show]'); if (!b) return;
+  var inp = document.getElementById(b.dataset.show); if (!inp) return;
+  inp.type = inp.type === 'password' ? 'text' : 'password'; showLabel(b);
+});
+$('#staff').addEventListener('click', function(){
+  if (admin.on) openAdminPanel(); else openAuth(function(){ openAdminPanel(); });
+});
+
+/* ---- the product editor: load the newest list, save, handle two people editing at once */
+function setWork(cat){
+  work = cat.products.map(normProduct).filter(Boolean).map(clone);
+  dirty = {}; gone = {};
+}
+function openAdminPanel(id){
+  if (!admin.on) { openAuth(function(){ openAdminPanel(id); }); return; }
+  if (work && dirtyCount()) { adminOpen(id); return; }
+  API.call('GET', '/api/admin?a=catalog').then(function(cat){
+    setWork(cat); notice = null; applyCatalog(cat); adminOpen(id);
+  }, function(e){
+    if (e.status === 401) { onSignedOut(); openAuth(function(){ openAdminPanel(id); }); return; }
+    work = null; dirty = {}; gone = {}; notice = t('aLoadFail'); adminOpen(id);
+  });
+}
+function mergeConflict(res){
+  var conflicts = {}, names = [];
+  res.ids.forEach(function(id){
+    conflicts[id] = 1;
+    var mine = wid(id), theirs = res.catalog.products.filter(function(p){ return p.id === id; })[0];
+    names.push('“' + ((theirs && theirs.name) || (mine && mine.name) || id) + '”');
+  });
+  var srv = res.catalog.products.map(normProduct).filter(Boolean).map(clone), out = [], seen = {}, nd = {}, ng = {};
+  srv.forEach(function(sp){
+    seen[sp.id] = 1;
+    if (dirty[sp.id] && !conflicts[sp.id]) {
+      var mine = wid(sp.id);
+      if (mine) out.push(mine); else ng[sp.id] = sp.u | 0;   /* my edit (or my delete) still applies: nobody else touched it */
+      nd[sp.id] = true;
+    } else out.push(sp);
+  });
+  work.forEach(function(p){ if (p.isNew && dirty[p.id] && !seen[p.id]) { out.push(p); nd[p.id] = true; } });
+  work = out; dirty = nd; gone = ng;
+  if (openId && !wid(openId)) openId = null;
+  notice = t('aConflict', names.join(', '));
+  applyCatalog(res.catalog, true);
+  saving = false; adminRender(); aStatus(t('aErrConflict'), true);
 }
 function adminSave(){
   if (saving || !work) return;
   var bad = work.filter(function(p){ return !(p.name || '').trim(); })[0];
   if (bad) { openId = bad.id; adminList(); aStatus(t('aNeedName'), true); return; }
-  var n = Math.random().toString(36).slice(2) + Date.now().toString(36);
-  var data = { v: 2, rev: (DATA.rev | 0) + 1, n: n, shop: SHOP, products: work.map(cleanProduct) };
-  var ch = {}; Object.keys(dirty).forEach(function(id){ var p = wid(id); ch[id] = p ? cleanProduct(p) : null; });
-  sstore.set('kv-admin-stash', JSON.stringify({ n: n, ch: ch }));   /* the page reloads after a save, and after a lost race */
+  var changes = [];
+  Object.keys(dirty).forEach(function(id){
+    var p = wid(id);
+    if (p) changes.push({ id: id, base: p.isNew ? null : (p.u | 0), product: cleanProduct(p) });
+    else if (gone[id] !== undefined) changes.push({ id: id, base: gone[id], product: null });
+  });
+  if (!changes.length) { dirty = {}; gone = {}; aFoot(); return; }
   saving = true; aStatus(t('aSaving')); $('#a-save').disabled = true; $('#a-discard').disabled = true;
-  publishOnce(buildDoc(data)).then(function(){
-    aStatus(t('aSaved'));
-    setTimeout(function(){ location.reload(); }, 6000);
-  }, function(err){
+  API.call('POST', '/api/admin', { a: 'save', changes: changes }).then(function(d){
     saving = false;
-    var code = err && err.code, msg = t('aErrGeneric');
-    if (code === 'not_writer' || code === 'not_granted' || code === 'consent_required') msg = t('aErrReadOnly');
-    else if (code === 'conflict') msg = t('aErrConflict');
-    else if (code === 'rate_limited') msg = t('aErrRate');
-    else if (code === 'too_large') msg = t('aErrLarge');
-    else if (code === 'capability_disabled' || code === 'capability_removed' || code === 'not_declared') msg = t('aErrOff');
-    if (code !== 'conflict') sstore.del('kv-admin-stash');
-    aFoot(); aStatus(msg, true); toast(msg, true);
+    setWork(d.catalog); notice = null; applyCatalog(d.catalog, true);
+    adminRender(); aStatus(t('aSaved'));
+  }, function(err){
+    if (err.code === 'conflict') { mergeConflict(err.data); return; }
+    saving = false; aFoot();
+    if (err.status === 401) { onSignedOut(); aStatus(t('eSignedOut'), true); openAuth(); return; }
+    aStatus(err.code === 'network' ? t('eNet') : errText(err), true);
   });
 }
 $('#a-save').addEventListener('click', adminSave);
 
-/* ---- find out whether this viewer may edit; everyone else never sees any of this */
-function initAdmin(){
-  var c = window.claude;
-  if (!c || !c.use) return;
-  Promise.all([c.use('user'), c.use('artifact'), c.use('assets')]).then(function(r){
-    if (!r[0] || !r[1]) return;
-    return r[0].canEdit().then(function(ok){
-      if (!ok) return;
-      admin.on = true; admin.art = r[1]; admin.assets = r[2];
-      $('#adminbtn').hidden = false;
-      var st = null; try { st = JSON.parse(sstore.get('kv-admin-stash') || 'null'); } catch (e) {}
-      if (st) { if (st.n === DATA.n) sstore.del('kv-admin-stash'); else { restoreStash = st; toast(t('aRestore'), true); } }
-    });
-  }).catch(function(){});
+function signOut(){
+  function done(){
+    setMe(null); work = null; dirty = {}; gone = {}; notice = null; openId = null;
+    closeD($('#people')); closeD($('#admin')); closeD($('#auth')); toast(t('aOutDone'));
+  }
+  API.call('POST', '/api/auth', { a: 'logout' }).then(done, done);
+}
+$('#a-out').addEventListener('click', function(){
+  var b = this;
+  if (dirtyCount() && !b.dataset.armed) {
+    b.dataset.armed = '1'; b.textContent = t('aOut2');
+    setTimeout(function(){ if (b.isConnected) { delete b.dataset.armed; b.textContent = t('aOut'); } }, 4000);
+    return;
+  }
+  signOut();
+});
+$('#a-people').addEventListener('click', function(){ openPeople(); });
+
+/* ---- admins and my account */
+var team = null, credText = '';
+function genPass(){
+  var A = 'abcdefghjkmnpqrstuvwxyz23456789', out = '', a = new Uint32Array(12);   /* no look-alike letters */
+  window.crypto.getRandomValues(a);
+  for (var i = 0; i < 12; i++) { out += A.charAt(a[i] % A.length); if (i % 4 === 3 && i < 11) out += '-'; }
+  return out;
+}
+function copyText(text){
+  return new Promise(function(res){
+    function fallback(){
+      try {
+        var ta = document.createElement('textarea'); ta.value = text; ta.setAttribute('readonly', '');
+        ta.style.cssText = 'position:fixed;top:0;opacity:0'; $('#people').appendChild(ta); ta.select();
+        var ok = document.execCommand('copy'); ta.remove(); res(ok);
+      } catch (e) { res(false); }
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(function(){ res(true); }, fallback); else fallback();
+  });
+}
+function pfield(label, id, auto, gen){
+  return '<label for="' + id + '"><b>' + label + '</b><span class="pw"><input id="' + id + '" type="password" autocomplete="' + auto + '" autocapitalize="none" autocorrect="off" spellcheck="false">' +
+    (gen ? '<button class="gen" type="button" data-act="gen" data-for="' + id + '">' + t('pGen') + '</button>' : '') +
+    '<button class="show" type="button" data-show="' + id + '">' + t('auShow') + '</button></span></label>';
+}
+function teamRows(){
+  if (!team) return '<li class="p-row"><span class="s-sub">' + t('pLoading') + '</span></li>';
+  return team.map(function(a){
+    var you = a.u === admin.me.u, owner = a.role === 'owner';
+    return '<li class="p-row" data-u="' + esc(a.u) + '"><div class="pr-top"><div class="who"><b>' + esc(a.name) + '<span class="role">' + t(owner ? 'roleOwner' : 'roleAdmin') + '</span>' +
+      (you ? '<span class="role">' + t('pYou') + '</span>' : '') + '</b><span><bdi dir="ltr">@' + esc(a.u) + '</bdi></span></div>' +
+      (owner ? '' : '<div class="acts"><button class="btn sm" type="button" data-act="reset">' + t('pReset') + '</button><button class="btn sm danger" type="button" data-act="remove">' + t('pRemove') + '</button></div>') + '</div>' +
+      (owner ? '' : '<form class="p-reset" data-form="reset" data-u="' + esc(a.u) + '" hidden novalidate>' + pfield(t('pNew'), 'rp-' + esc(a.u), 'new-password', true) + '<button class="btn gold" type="submit">' + t('pResetGo') + '</button></form>') + '</li>';
+  }).join('');
+}
+function peopleHtml(){
+  var me = admin.me, owner = me.role === 'owner';
+  var h = '<p class="msg" id="pe-msg" role="status" hidden></p>';
+  h += '<section class="p-card"><h3 class="p-h">' + t('pAccount') + '</h3><div class="p-me"><b>' + esc(me.name) + '</b><span><bdi dir="ltr">@' + esc(me.u) + '</bdi> · ' + t(owner ? 'roleOwner' : 'roleAdmin') + '</span></div>' +
+    '<details class="p-pw"><summary>' + t('pChangePw') + '</summary><form data-form="pw" novalidate>' + pfield(t('pCur'), 'pw-cur', 'current-password') + pfield(t('pNew'), 'pw-new', 'new-password') +
+    pfield(t('pNew2'), 'pw-new2', 'new-password') + '<button class="btn gold" type="submit">' + t('pSavePw') + '</button></form></details></section>';
+  if (owner) {
+    h += '<section class="p-card"><h3 class="p-h">' + t('pTeam') + '</h3><p class="s-sub">' + t('pTeamSub') + '</p><ul class="p-list" id="pe-list">' + teamRows() + '</ul></section>';
+    h += '<section class="p-card"><h3 class="p-h">' + t('pAdd') + '</h3><form data-form="add" novalidate>' +
+      '<label for="ad-name"><b>' + t('pName') + '</b><input id="ad-name" type="text" autocomplete="off"></label>' +
+      '<label for="ad-user"><b>' + t('pUser') + '</b><input id="ad-user" type="text" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false"></label>' +
+      pfield(t('pPass'), 'ad-pass', 'new-password', true) + '<small class="s-sub">' + t('passHint') + '</small>' +
+      '<button class="btn gold" type="submit">' + t('pAddGo') + '</button><div class="p-cred" id="pe-cred" hidden></div></form></section>';
+  }
+  return h;
+}
+function peopleRender(){
+  $('#pe-title').textContent = t('pTitle');
+  var keep = $('#pe-msg') && !$('#pe-msg').hidden ? { t: $('#pe-msg').textContent, c: $('#pe-msg').className } : null;
+  $('#pe-body').innerHTML = peopleHtml();
+  if (keep) { var m = $('#pe-msg'); m.textContent = keep.t; m.className = keep.c; m.hidden = false; }
+  credShow();
+}
+function teamRefresh(){ var l = $('#pe-list'); if (l) l.innerHTML = teamRows(); }
+function pmsg(text, bad){
+  var m = $('#pe-msg'); if (!m) return;
+  m.textContent = text; m.className = 'msg ' + (bad ? 'bad' : 'ok'); m.hidden = false;
+  try { m.scrollIntoView({ block: 'nearest' }); } catch (e) {}
+}
+function credShow(){
+  var box = $('#pe-cred'); if (!box) return;
+  if (!credText) { box.hidden = true; box.innerHTML = ''; return; }
+  box.hidden = false;
+  box.innerHTML = '<p>' + esc(t('pShare')) + '</p><pre>' + esc(credText) + '</pre><button class="btn sm gold" type="button" data-act="copycred">' + t('pCopy') + '</button>';
+}
+function openPeople(){
+  if (!admin.on) return;
+  team = null; credText = ''; peopleRender(); openD($('#people'));
+  if (admin.me.role === 'owner') loadTeam();
+}
+function loadTeam(){
+  return API.call('GET', '/api/admin?a=team').then(function(d){ team = d.team; teamRefresh(); }, function(e){
+    if (e.status === 401) { onSignedOut(); closeD($('#people')); openAuth(); } else pmsg(errText(e), true);
+  });
+}
+function peopleFail(e){
+  if (e.status === 401 && e.code === 'signed_out') { onSignedOut(); closeD($('#people')); openAuth(); return; }
+  pmsg(e.code === 'bad_login' && e.data && e.data.error ? t('eCurrent') : errText(e), true);
+}
+$('#pe-body').addEventListener('click', function(e){
+  var b = e.target.closest('[data-act]'); if (!b) return;
+  var act = b.dataset.act, row = b.closest('.p-row');
+  if (act === 'gen') {
+    var inp = document.getElementById(b.dataset.for); inp.value = genPass(); inp.type = 'text';
+    var sh = inp.parentNode.querySelector('[data-show]'); if (sh) showLabel(sh);
+  } else if (act === 'reset') {
+    var f = row.querySelector('.p-reset'); f.hidden = !f.hidden;
+    if (!f.hidden) f.querySelector('input').focus();
+  } else if (act === 'remove') {
+    var u = row.dataset.u;
+    if (!b.dataset.armed) {
+      b.dataset.armed = '1'; b.textContent = t('pRemove2');
+      setTimeout(function(){ if (b.isConnected) { delete b.dataset.armed; b.textContent = t('pRemove'); } }, 3000);
+      return;
+    }
+    API.call('POST', '/api/admin', { a: 'removeAdmin', username: u }).then(function(d){ team = d.team; teamRefresh(); pmsg(t('pRemoved', u)); }, peopleFail);
+  } else if (act === 'copycred') {
+    copyText(credText).then(function(ok){ pmsg(t(ok ? 'pCopied' : 'pCopyFail'), !ok); });
+  }
+});
+$('#pe-body').addEventListener('submit', function(e){
+  e.preventDefault();
+  var f = e.target, kind = f.dataset.form, btn = f.querySelector('[type=submit]');
+  function val(id){ return document.getElementById(id).value; }
+  function busy(on){ btn.disabled = on; }
+  if (kind === 'pw') {
+    if (val('pw-new') !== val('pw-new2')) { pmsg(t('pMismatch'), true); return; }
+    busy(true);
+    API.call('POST', '/api/admin', { a: 'changePw', current: val('pw-cur'), password: val('pw-new') }).then(function(){
+      busy(false); f.reset(); f.querySelectorAll('input').forEach(function(i){ i.type = 'password'; }); f.parentNode.open = false; pmsg(t('pPwDone'));
+    }, function(err){ busy(false); if (err.code === 'bad_login') pmsg(t('eCurrent'), true); else peopleFail(err); });
+  } else if (kind === 'add') {
+    var u = val('ad-user').trim().toLowerCase(), p = val('ad-pass');
+    busy(true);
+    API.call('POST', '/api/admin', { a: 'addAdmin', name: val('ad-name'), username: u, password: p }).then(function(d){
+      busy(false); team = d.team; teamRefresh();
+      credText = t('pShareTxt', location.origin + '/admin', u, p);
+      f.reset(); document.getElementById('ad-pass').type = 'password'; credShow(); pmsg(t('pAdded', u));
+    }, function(err){ busy(false); peopleFail(err); });
+  } else if (kind === 'reset') {
+    var ru = f.dataset.u, rp = f.querySelector('input').value;
+    busy(true);
+    API.call('POST', '/api/admin', { a: 'resetPw', username: ru, password: rp }).then(function(d){
+      busy(false); team = d.team; teamRefresh();
+      credText = t('pShareTxt', location.origin + '/admin', ru, rp); credShow(); pmsg(t('pResetDone', ru));
+    }, function(err){ busy(false); peopleFail(err); });
+  }
+});
+$('#pe-close').addEventListener('click', function(){ closeD($('#people')); });
+$('#people').addEventListener('click', function(e){ if (e.target === this) closeD(this); });
+$('#people').addEventListener('close', function(){ credText = ''; team = null; });
+
+/* ---- on every page load: staff who signed in before are recognised again (the cookie does the real work) */
+function initStaff(staffPage){
+  var hint = store.get('kv-staff') === '1';
+  if (!staffPage && !hint) return;
+  API.call('GET', '/api/auth').then(function(s){
+    if (s.me) { setMe(s.me); if (staffPage) openAdminPanel(); }
+    else { store.del('kv-staff'); if (staffPage) openAuth(function(){ openAdminPanel(); }); }
+  }, function(){ if (staffPage) openAuth(function(){ openAdminPanel(); }); });
 }
 
 
-/* ---------- start */
-applyLang();
-if (dropped) toast(t('tDropped'), true);
-if (store.get('kv-18') !== 'yes') { gate.showModal(); document.documentElement.classList.add('lock'); }
-initAdmin();
+/* ---------- start: show the built-in list at once (or the server's list if it answers within a blink), then keep it fresh */
+(function(){
+  var started = false;
+  function start(cat){
+    if (started) return;
+    started = true;
+    if (cat) applyCatalog(cat);
+    applyLang();
+    if (dropped) toast(t('tDropped'), true);
+    var staffPage = location.pathname.replace(/\/+$/, '') === '/admin';
+    if (!staffPage && store.get('kv-18') !== 'yes') { $('#gate').showModal(); document.documentElement.classList.add('lock'); }
+    initStaff(staffPage);
+  }
+  var timer = setTimeout(function(){ start(null); }, 350);
+  fetchCatalog().then(function(cat){
+    if (!started) { clearTimeout(timer); start(cat); }
+    else if (cat) applyCatalog(cat);
+  });
+  document.addEventListener('visibilitychange', function(){
+    if (document.visibilityState === 'visible' && started && Date.now() - lastCatalog > 60000) fetchCatalog().then(function(cat){ if (cat) applyCatalog(cat); });
+  });
+})();
 
 })();</script>
-
-</body></html>
+</body>
+</html>

@@ -1,0 +1,43 @@
+/* ---------- web admin: staff link, sign-in, admins and account */
+.site-foot .staff{margin-top:14px;border:0;background:none;color:var(--muted);font:500 12.5px var(--font-body);text-decoration:underline;text-underline-offset:3px;padding:8px 12px;opacity:.7}
+.site-foot .staff:hover,.site-foot .staff:focus-visible{opacity:1}
+
+.a-nav{justify-content:flex-start}
+.cta.solo{justify-content:center}
+.msg{margin:0;padding:10px 12px;border-radius:12px;border:1px solid var(--line);font-size:14px;line-height:1.45;overflow-wrap:anywhere}
+.msg.bad{border-color:color-mix(in srgb,var(--danger) 55%,var(--line));color:var(--danger)}
+.msg.ok{border-color:color-mix(in srgb,var(--ok) 55%,var(--line));color:var(--ok)}
+
+.authp form label small,.peoplep form label small{color:var(--muted);font-size:12.5px;font-weight:400}
+.pw{display:flex;gap:8px;align-items:stretch}
+.pw input{flex:1 1 auto;min-width:0}
+.pw .show,.pw .gen{flex:none;min-width:64px;border:1px solid var(--line);background:var(--panel-2);border-radius:12px;padding:0 12px;font:600 13px var(--font-body);color:var(--muted)}
+.pw .gen{color:var(--gold)}
+.authp .c-scroll form{margin-top:16px}
+.authp form .cta{margin-top:4px}
+
+@media (min-width:860px){
+  .sheet.authp{inset:0;margin:auto;width:min(460px,calc(100vw - 48px));height:auto;max-height:min(760px,calc(100dvh - 48px));border-radius:22px}
+  .sheet.peoplep{inset:0;margin:auto;width:min(640px,calc(100vw - 48px));height:min(780px,calc(100dvh - 48px));border-radius:22px}
+}
+
+.peoplep .c-scroll{display:grid;gap:14px;align-content:start}
+.p-card{border:1px solid var(--line);border-radius:16px;background:color-mix(in srgb,var(--panel-2) 55%,transparent);padding:14px}
+.p-card .s-sub{margin:0 0 4px;font-size:13.5px}
+.p-card form{margin-top:12px}
+.p-h{display:block;margin:0 0 6px;font:700 15px var(--font-body)}
+.p-me{display:grid;gap:2px;margin:6px 0 8px}
+.p-me span{color:var(--muted);font-size:13.5px}
+.p-pw summary{cursor:pointer;color:var(--gold);font-weight:600;font-size:14px;padding:8px 0}
+.p-list{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:8px}
+.p-row{display:grid;gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+.p-row .pr-top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.p-row .who{display:grid;gap:2px;min-width:0}
+.p-row .who b{overflow-wrap:anywhere}
+.p-row .who span{color:var(--muted);font-size:13px}
+.p-row .acts{display:flex;gap:6px;flex-wrap:wrap}
+.p-row form{margin-top:0}
+.role{display:inline-block;padding:2px 8px;border-radius:999px;background:var(--panel-2);color:var(--gold);font:600 11.5px var(--font-body);margin-inline-start:6px;vertical-align:middle}
+.p-cred{display:grid;gap:10px;padding:12px;border:1px solid var(--gold);border-radius:12px;background:color-mix(in srgb,var(--gold) 9%,var(--panel))}
+.p-cred p{margin:0;font-size:14px}
+.p-cred pre{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font:500 13.5px/1.55 ui-monospace,Menlo,Consolas,monospace;user-select:all;direction:ltr;text-align:left}

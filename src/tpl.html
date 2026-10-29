@@ -1,0 +1,182 @@
+<header class="brandbar">
+  <div class="wrap brandrow">
+    <div class="brand">
+      <div class="mark" role="img" aria-label="King Vape"></div>
+      <div><b>King Vape</b><small><span data-i="tag1"></span><span class="tag2"> · <span data-i="tag2"></span></span></small></div>
+    </div>
+    <div class="tools">
+      <button class="pill gold" id="adminbtn" type="button" hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
+        <span data-i="admin"></span>
+      </button>
+      <button class="pill" id="langbtn" type="button"></button>
+      <button class="pill cartbtn" id="cartbtn" type="button" data-i-aria="cartAria">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+        <span class="c" id="cartn" hidden>0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="top">
+  <div class="wrap">
+    <div class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input id="q" type="search" data-i-aria="searchAria" data-i-ph="searchPh" autocomplete="off" enterkeyhint="search">
+    </div>
+    <nav class="tabs" id="tabs" data-i-aria="catsAria"></nav>
+    <nav class="subs" id="subs" data-i-aria="subsAria" hidden></nav>
+  </div>
+</div>
+
+<main class="wrap">
+  <div class="heading"><h1 id="title"></h1><span class="count" id="count"></span></div>
+  <p class="intro" id="intro" data-i="intro"></p>
+  <ul class="grid" id="grid"></ul>
+  <div class="empty" id="none" hidden><strong data-i="noneT"></strong><span data-i="noneB"></span></div>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="logo" role="img" aria-label="King Vape"></div>
+    <p><span data-i="footOrders"></span> <b class="num"><bdi class="n">+961 71 243 971</bdi></b></p>
+    <a class="chat" href="https://wa.me/96171243971" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg>
+      <span data-i="chat"></span>
+    </a>
+    <p data-i="footPrices"></p>
+    <p data-i="footAge"></p>
+    <button class="staff" id="staff" type="button" data-i="staff"></button>
+  </div>
+</footer>
+
+<button class="orderbar" id="orderbar" type="button" hidden><span id="ob-text"></span><span class="tot" id="ob-tot"></span></button>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<dialog class="sheet product" id="sheet" aria-labelledby="s-name">
+  <button class="x" id="s-close" type="button" data-i-aria="close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <div class="s-media" id="s-media"><img id="s-img" alt="" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></div>
+  <div class="s-main">
+    <div class="s-scroll">
+      <h2 id="s-name"></h2>
+      <p class="s-sub" id="s-sub"></p>
+      <ul class="chips" id="s-specs"></ul>
+      <div class="s-price" id="s-price"></div>
+      <p class="note off" id="s-off" hidden data-i="unavailNote"></p>
+      <p class="note" id="s-note" hidden></p>
+      <h3 id="s-h3"><b id="s-label"></b><span id="s-avail"></span></h3>
+      <ul class="opts" id="s-opts"></ul>
+      <button class="editlink" id="s-edit" type="button" hidden data-i="editThis"></button>
+    </div>
+    <div class="s-foot"><button class="cta" id="s-add" type="button"><span id="s-add-l"></span><span id="s-add-r"></span></button></div>
+  </div>
+</dialog>
+
+<dialog class="sheet drawer" id="cart" aria-labelledby="c-title">
+  <div class="c-head">
+    <h2 id="c-title" data-i="yourOrder"></h2>
+    <button class="x" id="c-close" type="button" data-i-aria="close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div class="c-scroll">
+    <div class="c-empty" id="c-empty" hidden><strong data-i="emptyT"></strong><span data-i="emptyB"></span><br><button id="c-browse" type="button" data-i="browse"></button></div>
+    <div id="c-lines"></div>
+    <form id="c-form" novalidate>
+      <label for="f-name"><b data-i="fName"></b><input id="f-name" type="text" autocomplete="name" data-i-ph="fNamePh"></label>
+      <label for="f-addr"><b data-i="fAddr"></b><input id="f-addr" type="text" autocomplete="street-address" data-i-ph="fAddrPh"></label>
+      <label for="f-notes"><b data-i="fNotes"></b><textarea id="f-notes" data-i-ph="fNotesPh"></textarea></label>
+      <p class="err" id="f-err" hidden data-i="fErr"></p>
+    </form>
+    <details class="preview" id="c-preview">
+      <summary data-i="seeMsg"></summary>
+      <textarea id="c-msg" readonly data-i-aria="msgAria"></textarea>
+      <button class="copy" id="c-copy" type="button" data-i="copy"></button>
+    </details>
+  </div>
+  <div class="c-foot">
+    <div class="totals"><span class="lbl" id="t-lbl"></span><span class="sum" id="t-sum"></span></div>
+    <p class="pending" id="t-pending" hidden></p>
+    <a class="cta wa" id="wa" href="#" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg>
+      <span data-i="send"></span>
+    </a>
+    <div class="wahelp" id="wa-help" hidden>
+      <p data-i="waHelp"></p>
+      <p class="wnum"><bdi class="n">+961 71 243 971</bdi></p>
+      <div class="wrow"><button class="btn sm gold" id="wa-copy" type="button" data-i="copyOrder"></button><a class="btn sm" id="wa-chat" href="https://wa.me/96171243971" target="_blank" rel="noopener noreferrer" data-i="openChat"></a></div>
+    </div>
+    <p class="fine"><span data-i="fine1"></span> <b><bdi class="n">+961 71 243 971</bdi></b><span data-i="fine2"></span></p>
+    <button class="linkbtn" id="c-clear" type="button"></button>
+  </div>
+</dialog>
+
+<dialog class="gate" id="gate" aria-labelledby="g-title">
+  <div class="logo" role="img" aria-label="King Vape"></div>
+  <div id="g-ask">
+    <h2 class="vh" id="g-title">King Vape</h2>
+    <p data-i="gateTxt"></p>
+    <div class="btns">
+      <button class="cta" id="g-yes" type="button" data-i="gateYes"></button>
+      <button class="no" id="g-no" type="button" data-i="gateNoBtn"></button>
+    </div>
+    <button class="lg" id="g-lang" type="button"></button>
+  </div>
+  <div id="g-block" hidden>
+    <h2 data-i="sorry"></h2>
+    <p data-i="gateNo"></p>
+  </div>
+</dialog>
+
+<dialog class="sheet adminp" id="admin" aria-labelledby="a-title">
+  <div class="a-head">
+    <div><h2 id="a-title" data-i="aTitle"></h2><small id="a-sub"></small></div>
+    <button class="x" id="a-close" type="button" data-i-aria="close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div class="a-bar">
+    <div class="a-banner" id="a-banner" hidden></div>
+    <div class="row a-nav">
+      <button class="btn sm" id="a-people" type="button"></button>
+      <button class="btn sm" id="a-out" type="button"></button>
+    </div>
+    <div class="row">
+      <input type="search" id="a-q" data-i-ph="aSearch" data-i-aria="aSearch" autocomplete="off">
+      <button class="btn" id="a-soldf" type="button" aria-pressed="false" data-i="aSoldOnly"></button>
+      <button class="btn gold" id="a-add" type="button" data-i="aAdd"></button>
+    </div>
+  </div>
+  <div class="a-list" id="a-list"></div>
+  <div class="a-foot">
+    <span class="st" id="a-st" role="status"></span>
+    <div class="acts">
+      <button class="btn" id="a-discard" type="button" data-i="aDiscard"></button>
+      <button class="btn gold" id="a-save" type="button"></button>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="sheet authp" id="auth" aria-labelledby="au-title">
+  <div class="c-head">
+    <h2 id="au-title"></h2>
+    <button class="x" id="au-close" type="button" data-i-aria="close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div class="c-scroll">
+    <p class="s-sub" id="au-sub"></p>
+    <form id="au-form" novalidate>
+      <label class="f-setup" for="au-code" hidden><b data-i="suCode"></b><input id="au-code" type="text" autocomplete="off" autocapitalize="characters" autocorrect="off" spellcheck="false"><small data-i="suCodeHelp"></small></label>
+      <label class="f-setup" for="au-name" hidden><b data-i="suName"></b><input id="au-name" type="text" autocomplete="name"></label>
+      <label for="au-user"><b id="au-user-l"></b><input id="au-user" type="text" autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false"></label>
+      <label for="au-pass"><b id="au-pass-l"></b><span class="pw"><input id="au-pass" type="password" autocomplete="current-password"><button class="show" type="button" data-show="au-pass"></button></span></label>
+      <label class="f-setup" for="au-pass2" hidden><b data-i="suPass2"></b><span class="pw"><input id="au-pass2" type="password" autocomplete="new-password"></span><small data-i="passHint"></small></label>
+      <p class="msg bad" id="au-msg" role="alert" hidden></p>
+      <button class="cta solo" id="au-go" type="submit"><span></span></button>
+      <p class="fine" id="au-forgot"></p>
+    </form>
+  </div>
+</dialog>
+
+<dialog class="sheet peoplep" id="people" aria-labelledby="pe-title">
+  <div class="c-head">
+    <h2 id="pe-title"></h2>
+    <button class="x" id="pe-close" type="button" data-i-aria="close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div class="c-scroll" id="pe-body"></div>
+</dialog>

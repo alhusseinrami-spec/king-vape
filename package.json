@@ -1,0 +1,9 @@
+{
+  "name": "king-vape",
+  "private": true,
+  "type": "module",
+  "description": "King Vape catalogue with WhatsApp ordering and a built-in admin",
+  "dependencies": {
+    "@vercel/blob": "latest"
+  }
+}

@@ -354,3 +354,10 @@ test('the catalogue keeps working if storage breaks (built-in list is served)', 
   assert.equal(r.data.products.length, 44);
   await fs.rename(dir + '/live/catalog.json.bak', dir + '/live/catalog.json');
 });
+
+test('version tags from Blob are made usable for conditional writes (weak W/"abc" becomes "abc")', async () => {
+  const { strongEtag } = await import('../lib/store.js');
+  assert.equal(strongEtag('W/"fa8f8d920145a61f1d08b4671f592c2b"'), '"fa8f8d920145a61f1d08b4671f592c2b"');
+  assert.equal(strongEtag('"fa8f8d920145a61f1d08b4671f592c2b"'), '"fa8f8d920145a61f1d08b4671f592c2b"');
+  assert.equal(strongEtag('abc123'), 'abc123');
+});

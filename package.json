@@ -4,6 +4,6 @@
   "type": "module",
   "description": "King Vape catalogue with WhatsApp ordering and a built-in admin",
   "dependencies": {
-    "@vercel/blob": "latest"
+    "@vercel/blob": "^2.3.3"
   }
 }

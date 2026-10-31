@@ -1,6 +1,7 @@
 import subprocess, tempfile, time, os, re, json, signal, urllib.request
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SHOTS = '/tmp/claude-0/-home-claude/8dc9ac97-2dc9-5ae2-b9ee-de80e9ec42dd/scratchpad/shots'
+SHOTS = os.environ.get('SHOTS', '/tmp/kv-shots')
+os.makedirs(SHOTS, exist_ok=True)
 CODE = 'TEST-CODE-1234-ABCD'
 
 class Server:

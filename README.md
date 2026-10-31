@@ -32,7 +32,7 @@ Live site: https://king-vape-three.vercel.app  ·  Staff sign-in: `/admin` (or t
 ## Limits to know about
 
 - There is one owner. Admins cannot manage other admins.
-- The shop's WhatsApp number and the category list are not editable in the admin (see below to change them).
+- The shop's WhatsApp number, the delivery fee and the category list are not editable in the admin (see below to change them).
 - Lost owner password? Another admin cannot reset it. Delete `live/admins.json` in the Blob store
   (Vercel dashboard → Storage → king-vape-data → Browser). The next visit to `/admin` shows the setup screen again;
   use the setup code to create a new owner and add the admins again. Products and photos are not affected.
@@ -55,5 +55,6 @@ python3 test/e2e_ui.py        # browser tests (needs Playwright + Chromium)
 ```
 
 - The WhatsApp number is in `src/tpl.html` and `lib/seed.json` (search for `96171243971`).
+- The flat delivery fee is `shop.delivery` in `lib/seed.json` (currently 4, in US dollars; 0 turns it off). It is added to every order's total, the cart and the WhatsApp message. Run `python3 src/build.py` after changing it.
 - Categories live in `lib/cats.js` and `src/i18n.js`; keep the two in sync.
 - Push to `main` to publish. Other branches get a preview deployment with its own, separate data.

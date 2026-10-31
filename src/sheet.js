@@ -20,6 +20,7 @@ function applyLang(){
   document.querySelectorAll('[data-i-aria]').forEach(function(el){ el.setAttribute('aria-label', t(el.dataset.iAria)); });
   var other = lang === 'ar' ? 'English' : 'عربي';
   [$('#langbtn'), $('#g-lang')].forEach(function(b){ b.textContent = other; b.lang = lang === 'ar' ? 'en' : 'ar'; b.setAttribute('aria-label', t('switchTo')); });
+  var fd = $('#foot-del'); fd.hidden = !(SHOP.delivery > 0); fd.textContent = SHOP.delivery > 0 ? t('footDelivery', ltr(money(SHOP.delivery))) : '';
   $('#c-clear').textContent = t('clear'); delete $('#c-clear').dataset.armed;
   render();
   if ($('#cart').open) renderCart();
@@ -119,11 +120,15 @@ function renderCart(){
       '<button class="rm" type="button" data-rm="' + esc(p.id) + '" aria-label="' + esc(t('removeP', nm(p))) + '"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-12M9 7V4h6v3"/></svg></button>' +
       '<div class="rows">' + rows + '</div></div>';
   }).join('');
-  $('#t-lbl').textContent = pl('item', tt.items);
-  $('#t-sum').textContent = tt.priced > 0 ? ltr(money(tt.priced)) : (tt.items ? t('toConfirm') : '');
-  $('#t-sum').className = 'sum' + (tt.priced > 0 ? '' : ' txt');
+  $('#t-lbl').textContent = tt.fee ? t('total') + ' · ' + pl('item', tt.items) : pl('item', tt.items);
+  $('#t-sum').textContent = tt.total > 0 ? ltr(money(tt.total) + (tt.unpriced ? ' +' : '')) : (tt.items ? t('toConfirm') : '');
+  $('#t-sum').className = 'sum' + (tt.total > 0 ? '' : ' txt');
+  $('#t-brk').hidden = !tt.fee;
+  $('#t-items-row').hidden = !(tt.priced > 0);
+  $('#t-items').textContent = tt.priced > 0 ? ltr(money(tt.priced)) : '';
+  $('#t-fee').textContent = tt.fee ? ltr(money(tt.fee)) : '';
   var pend = $('#t-pending');
-  pend.hidden = !(tt.priced > 0 && tt.unpriced > 0);
+  pend.hidden = !(tt.total > 0 && tt.unpriced > 0);
   pend.textContent = tt.unpriced ? t('pendingWa', pl('item', tt.unpriced)) : '';
   updateLink();
 }
@@ -145,7 +150,9 @@ function message(){
     }
   });
   out.push('');
-  if (tt.priced > 0) out.push('*' + t('mTotal') + ':* ' + ltr(money(tt.priced)) + (tt.unpriced ? t('mPlus', pl('item', tt.unpriced)) : ''));
+  if (tt.fee > 0 && tt.priced > 0) out.push('*' + t('mItems') + ':* ' + ltr(money(tt.priced)));
+  if (tt.fee > 0) out.push('*' + t('mDelivery') + ':* ' + ltr(money(tt.fee)));
+  if (tt.total > 0) out.push('*' + t('mTotal') + ':* ' + ltr(money(tt.total)) + (tt.unpriced ? t('mPlus', pl('item', tt.unpriced)) : ''));
   else out.push('*' + t('mTotal') + ':* ' + t('mTbc'));
   if (notes) out.push('', '*' + t('mNotes') + ':* ' + notes);
   return out.join('\n');

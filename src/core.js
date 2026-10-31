@@ -77,7 +77,8 @@ function totals(){
     var p = byId[l.id]; items += l.qty;
     if (p.price == null) unpriced += l.qty; else priced += p.price * l.qty;
   });
-  return { items: items, priced: priced, unpriced: unpriced };
+  var fee = items > 0 && SHOP.delivery > 0 ? SHOP.delivery : 0;   /* flat delivery fee, added to every order */
+  return { items: items, priced: priced, unpriced: unpriced, fee: fee, total: priced + fee };
 }
 
 /* ---------- catalogue */
@@ -129,7 +130,7 @@ function renderGrid(){
       '<span class="foot">' + (p.price != null ? '<span class="price">' + moneyH(p.price) + '</span>' : '<span class="ask">' + t('askPrice') + '</span>') + '</span></span></button></li>';
   }).join('');
 }
-function totalText(tt){ return tt.priced > 0 ? ltr(money(tt.priced) + (tt.unpriced ? ' +' : '')) : (tt.items ? t('askPrice') : ''); }
+function totalText(tt){ return tt.total > 0 ? ltr(money(tt.total) + (tt.unpriced ? ' +' : '')) : (tt.items ? t('askPrice') : ''); }
 function renderBars(){
   var tt = totals();
   var n = $('#cartn'); n.textContent = tt.items; n.hidden = !tt.items;

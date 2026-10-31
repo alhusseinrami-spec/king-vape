@@ -85,6 +85,9 @@ details.preview{margin-top:16px;border:1px solid var(--line);border-radius:12px;
 details.preview summary{height:44px;display:flex;align-items:center;cursor:pointer;color:var(--muted);font-size:14px}
 details.preview textarea{min-height:190px;font:13px/1.45 ui-monospace,Menlo,Consolas,monospace;resize:none}
 details.preview .copy{margin:10px 0 14px;height:40px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:var(--panel-2);font-weight:600;font-size:14px}
+.brk{display:grid;gap:4px;padding-bottom:8px;border-bottom:1px dashed var(--line)}
+.brk .r{display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:14px}
+.brk .v{font-variant-numeric:tabular-nums;color:var(--text)}
 .totals{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
 .totals .lbl{color:var(--muted);font-size:14px}
 .totals .sum{font:700 24px/1 var(--font-body);color:var(--gold);font-variant-numeric:tabular-nums}

@@ -219,6 +219,18 @@ test('saving: add a product, then delete it; unrelated products are untouched', 
   assert.equal(del.data.catalog.products.length, 44);
 });
 
+test('saving: the IQOS category accepts products (and an unknown category is still refused)', async () => {
+  const np = { id: 'p-iqos01', name: 'Test IQOS', cat: 'iqos', sub: null, img: '', glow: [10, 20, 30], price: 30, specs: [], kind: 'color', options: ['Blue', 'Black'] };
+  const r = await owner.post('/api/admin', { a: 'save', changes: [{ id: np.id, base: null, product: np }] });
+  assert.equal(r.status, 200);
+  const found = r.data.catalog.products.find((x) => x.id === np.id);
+  assert.equal(found.cat, 'iqos');
+  const bad = await owner.post('/api/admin', { a: 'save', changes: [{ id: 'p-nope01', base: null, product: { ...np, id: 'p-nope01', cat: 'nope' } }] });
+  assert.equal(bad.status, 400);
+  const del = await owner.post('/api/admin', { a: 'save', changes: [{ id: np.id, base: found.u, product: null }] });
+  assert.equal(del.status, 200);
+});
+
 test('saving: bad data is rejected and nothing is stored', async () => {
   const base = (await product('airmez-20000'));
   const cases = [

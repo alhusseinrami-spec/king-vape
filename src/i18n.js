@@ -7,6 +7,7 @@ en: {
   all:'All', allProducts:'All products', resultsFor:function(q){ return 'Results for “' + q + '”'; },
   intro:'Tap a product, choose your flavors and quantity, then send the order to our WhatsApp.',
   noneT:'Nothing matches that search', noneB:'Try a flavor name like mango, watermelon or grape.',
+  catEmptyT:'Coming soon', catEmptyB:'We are adding products to this category. Check back shortly.',
   allOf:function(c){ return 'All ' + c.toLowerCase(); },
   inOrder:function(n){ return n + ' in order'; }, askPrice:'Ask for price', soldOut:'Sold out', unavailable:'Unavailable',
   viewOrder:function(n){ return 'View order, ' + n; },
@@ -57,6 +58,7 @@ ar: {
   all:'الكل', allProducts:'كل المنتجات', resultsFor:function(q){ return 'نتائج «' + q + '»'; },
   intro:'اختر منتجاً ثم النكهات والكمية، وأرسل طلبك مباشرة إلى واتساب.',
   noneT:'لا توجد نتائج', noneB:'جرّب اسم نكهة مثل مانجو أو بطيخ أو عنب.',
+  catEmptyT:'قريباً', catEmptyB:'نضيف منتجات إلى هذه الفئة. عاود الزيارة قريباً.',
   allOf:function(c){ return 'كل ' + c; },
   inOrder:function(n){ return n + ' في الطلب'; }, askPrice:'السعر عند الطلب', soldOut:'غير متوفر', unavailable:'غير متوفر',
   viewOrder:function(n){ return 'عرض الطلب، ' + n; },
@@ -112,7 +114,8 @@ var PL = {
 var CATS = [
   { id:'devices', en:'Devices', ar:'الأجهزة', subs:[] },
   { id:'juices',  en:'Juices',  ar:'العصائر', subs:[{ id:'Freebase', en:'Freebase', ar:'فري بيس' }, { id:'Salt nicotine', en:'Salt nicotine', ar:'سولت نيكوتين' }] },
-  { id:'puffs',   en:'Puffs',   ar:'السحبات', alt:'سحبات', subs:[{ id:'Normal puffs', en:'Normal puffs', ar:'سحبات عادية' }, { id:'Shisha puffs', en:'Shisha puffs', ar:'سحبات أرجيلة' }] }
+  { id:'puffs',   en:'Puffs',   ar:'السحبات', alt:'سحبات', subs:[{ id:'Normal puffs', en:'Normal puffs', ar:'سحبات عادية' }, { id:'Shisha puffs', en:'Shisha puffs', ar:'سحبات أرجيلة' }] },
+  { id:'iqos',    en:'IQOS',    ar:'آيكوس', subs:[] }
 ];
 var SPEC_AR = { 'Full kit':'طقم كامل', 'Kit':'طقم', 'Pod system':'نظام بود', 'Smart bluetooth':'بلوتوث ذكي', 'Device only':'الجهاز فقط', 'Pen cigarette style':'قلم بشكل سيجارة', 'Salt nicotine':'سولت نيكوتين', 'Freebase':'فري بيس' };
 function trSpec(s){

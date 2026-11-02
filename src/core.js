@@ -114,6 +114,8 @@ function renderGrid(){
   $('#title').textContent = state.q ? t('resultsFor', state.q.trim()) : state.cat === 'all' ? t('allProducts') : sub ? cl(sub) : cl(cat);
   $('#count').textContent = pl('product', list.length);
   $('#intro').hidden = !(state.cat === 'all' && !state.q);
+  var emptyCat = !state.q && state.cat !== 'all' && !list.length;   /* a category nobody has added products to yet */
+  $('#none strong').textContent = t(emptyCat ? 'catEmptyT' : 'noneT'); $('#none span').textContent = t(emptyCat ? 'catEmptyB' : 'noneB');
   $('#none').hidden = list.length > 0;
   $('#grid').innerHTML = list.map(function(p){
     var live = liveOpts(p), n = live.length, off = !isOn(p);
